@@ -25,7 +25,7 @@ All the data will be saved in localStorage, so when the user returns they will s
 - [ ] Each person will be saved with a new key in localStorage.
 - [ ] The id for the person should be part of the key. Eg: giftr-15803293837366500
 - [ ] The list of gifts belonging to each person will be an array inside the person stored in localStorage.
-* Each gift for each person can have the following properties:
+- [ ] Each gift for each person can have the following properties:
     * an id (not shown but in a data- property)
     * a label/title/name
     * a price (saved as a number, not a string)
@@ -38,7 +38,7 @@ All the data will be saved in localStorage, so when the user returns they will s
 - [ ] The forms to add new people or ideas should automatically be cleared out after the new person or gift is created.
 - [ ] Use the Intl date formatter for the birthdays.
 - [ ] Use the Intl currency formatter for the gift price value.
-* There are several ways to handle state in this application
+- [ ] There are several ways to handle state in this application
     1. Use the data-state attribute to effect the layout through the CSS and use your own JavaScript to change the value of data-state and then run other code.
     2. Use a Mutation observer to watch the data-state attributes and trigger the changes in the interface.
     3. Use a Finite State Machine to handle the changes and then set the data-state attribute to update the layout through CSS.
