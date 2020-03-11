@@ -37,7 +37,9 @@ export const gift = {
         delBtn.setAttribute('data-owner', giftItem.owner);
         delBtn.setAttribute('data-giftid', giftItem.id);
         name.textContent = giftItem.name;
-        price.textContent = giftItem.price; 
+
+        let currencyFormatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'CDN' });
+        price.textContent = currencyFormatter.format( giftItem.price); 
         location.textContent = giftItem.location.store;
         location.href = giftItem.location.website;
         btn_label.classList.add('fas', 'fa-trash'); //switch to icon

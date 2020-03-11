@@ -76,7 +76,14 @@ export const person = {
         li.setAttribute('data-personid', friend.id);
         btn.setAttribute('data-personid', friend.id);
         name.textContent = friend.name;
-        date.textContent = friend.birthdate;
+
+        let convertedDate = new Date(friend.birthdate);
+        let opts = {
+            month: 'short',
+            day: 'numeric'
+        }
+        let formattedDate = new Intl.DateTimeFormat('en-CA', opts).format(convertedDate);
+        date.textContent = formattedDate;
         btn_label.classList.add('fas', 'fa-trash'); //replace later with delete icon
 
         //add the event listeners
