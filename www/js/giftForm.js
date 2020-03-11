@@ -16,18 +16,23 @@ export const giftForm = {
 
         //get all the data from the inputs
         let form = document.querySelector('.gift-form');
-        let newGift = {
-            id: Date.now(),
-            name: document.querySelector('.gift-form input.name').value,
-            price: document.querySelector('.gift-form input.price').value,
-            location: {
-                store:document.querySelector('.gift-form input.store').value,
-                url: document.querySelector('.gift-form input.website').value
+        if(form.getAttribute('data-selection')){
+            let newGift = {
+                id: Date.now(),
+                name: document.querySelector('.gift-form input.name').value,
+                price: document.querySelector('.gift-form input.price').value,
+                location: {
+                    store:document.querySelector('.gift-form input.store').value,
+                    url: document.querySelector('.gift-form input.website').value
+                }
             }
+            giftForm.saveGiftToPerson(newGift);
+            form.reset();
+            console.log(newGift);
+        } else {
+            alert('No Person Selected');
         }
-        giftForm.saveGiftToPerson(newGift);
-        form.reset();
-        console.log(newGift);
+        
     },
 
 
