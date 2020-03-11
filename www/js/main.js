@@ -13,6 +13,7 @@
 import {person} from './person.js';
 import {personForm} from './personForm.js';
 import {giftForm} from './giftForm.js'
+import {gift} from './gift.js'
 
 let giftr = {
     appTextSource : {
@@ -29,6 +30,7 @@ let giftr = {
         personForm.render(aside);
         person.render(main);
         giftForm.render(aside);
+        gift.render(main);
 
     }
 };
