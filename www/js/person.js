@@ -101,8 +101,7 @@ export const person = {
         let a_date = new Date(a.birthdate);
         let b_date = new Date(b.birthdate);
 
-        if(a_date.getMonth() == b_date.getMonth()){ //they are the same month return day
-            console.log(a_date.getDay(),  b_date.getDay())
+        if(a_date.getMonth() == b_date.getMonth()){ //they are the same month return days
             return a_date.getDay() - b_date.getDay();
         } else {
             return a_date.getMonth() - b_date.getMonth(); //if not the same month sort by month
