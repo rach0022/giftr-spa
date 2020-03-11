@@ -27,6 +27,7 @@ export const personForm = {
             let id = Date.now();
             //now update the modules about the new person
             let newPerson = {id, name, birthdate}; //using the object shorthand instead of id:id
+            newPerson.gifts = []; //set an empty array for the new persons gifts
             personForm.trackPerson(newPerson);
             pubsub.publish('personAdded', newPerson);
             nameField.value = ""; //clear out the values
@@ -50,6 +51,7 @@ export const personForm = {
         savedList.forEach(save => personForm.trackerList.push(save.id)); 
         //since i am only loading in the list on the initial load, lets
         //unsubscribe after reloading the list
+        pubsub.unsubscribe('trackerListFound', personForm.reloadSavedPersons);
 
     }
 }

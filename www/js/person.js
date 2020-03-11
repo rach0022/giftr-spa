@@ -1,5 +1,4 @@
 import {pubsub} from './pubsub.js';
-import { personForm } from './personForm.js';
 
 export const person = {
     list: [],
@@ -91,6 +90,8 @@ export const person = {
         li.appendChild(name);
         li.appendChild(btn);
 
+        li.addEventListener('click', person.personSelected);
+
         return li;
     },
 
@@ -106,5 +107,15 @@ export const person = {
         } else {
             return a_date.getMonth() - b_date.getMonth(); //if not the same month sort by month
         }
+    },
+
+    //helper/ callback function used to tell the program which person is selected 
+    //and will publish this data with the id of the person and allow the gift form
+    //to update which person it is adding a gift too
+    personSelected: ev =>{
+        ev.preventDefault();
+
+        let id = ev.currentTarget.getAttribute('data-personid');
+        pubsub.publish('personSelected', id);
     }
 };

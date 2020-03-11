@@ -26,10 +26,28 @@
         </div>
     </template>
 
+    <template id="giftListTemplate">
+        <div class="person-container">
+            <ul></ul>
+        </div>
+    </template>
+
     <template id="personFormTemplate">
         <form action="" class="person-form">
             <input type="text" class="name" placeholder="Name">
             <input type="date" class="birthdate" value="2020-01-01">
+            <button>
+                <p>ADD</p>
+            </button>
+        </form>
+    </template>
+
+    <template id="giftFormTemplate">
+        <form action="" class="gift-form">
+            <input type="text" class="name" placeholder="Gift">
+            <input type="number" class="price" placeholder="0.00" step="0.05">
+            <input type="text" class="store" placeholder="Store Name">
+            <input type="url" class="website" placeholder="https://www.example.com">
             <button>
                 <p>ADD</p>
             </button>
