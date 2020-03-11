@@ -1,4 +1,5 @@
 import {pubsub} from './pubsub.js';
+import { personForm } from './personForm.js';
 
 export const person = {
     list: [],
@@ -18,7 +19,6 @@ export const person = {
             storedItems.forEach(x => {
                 let savedPerson = JSON.parse(localStorage.getItem(`GIFTR-${x}`))
                 person.list.push(savedPerson);
-                console.log(x);
 
                 //get a reference to the ul and append the people
                 let ul = document.querySelector('.person-container ul');
@@ -50,6 +50,8 @@ export const person = {
         list.add(newPerson);
 
         person.list = Array.from(list).sort(person.sortPerson);
+        // person.list.concat(Array.from(list));
+        // person.list.sort(person.sortPerson);
 
         //update any of the modules listening about the new person update
         console.log(`People: just updated the list`);
@@ -100,6 +102,7 @@ export const person = {
         let b_date = new Date(b.birthdate);
 
         if(a_date.getMonth() == b_date.getMonth()){ //they are the same month return day
+            console.log(a_date.getDay(),  b_date.getDay())
             return a_date.getDay() - b_date.getDay();
         } else {
             return a_date.getMonth() - b_date.getMonth(); //if not the same month sort by month
