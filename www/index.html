@@ -8,9 +8,32 @@
     <title>GIFTR</title>
 </head>
 <body>
+    <main>
+        <!-- the list modules will be loaded here  -->
+    </main>
+
+    <aside>
+        <!-- the form modules will be loaded here  -->
+    </aside>
     
     <script src="./js/main.js" type="module"></script>
 
     <!-- start of template definitions  -->
+    <template id="personListTemplate">
+        <div class="person-container">
+            <ul>
+            </ul>
+        </div>
+    </template>
+
+    <template id="personFormTemplate">
+        <form action="" class="person-form">
+            <input type="text" class="name" placeholder="Name">
+            <input type="date" class="birthdate" value="2020-01-01">
+            <button>
+                <p>ADD</p>
+            </button>
+        </form>
+    </template>
 </body>
 </html>
