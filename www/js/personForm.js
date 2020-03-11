@@ -15,13 +15,20 @@ export const personForm = {
 
         //get all the data from the input to create the new person object
         let nameField = document.querySelector('.person-form input.name');
-        let birthdateField = document.querySelector('.person-form input.birthdate')
+        let birthdateField = document.querySelector('.person-form input.birthdate');
         let name = nameField.value;
         let birthdate = birthdateField.value;
-        let id = Date.now();
 
-        //now update the modules about the new person
-        let newPerson = {id, name, birthdate}; //using the object shorthand instead of id:id
-        pubsub.publish('personAdded', newPerson);
+        if(name && birthdate){
+            let id = Date.now();
+            //now update the modules about the new person
+            let newPerson = {id, name, birthdate}; //using the object shorthand instead of id:id
+            pubsub.publish('personAdded', newPerson);
+            nameField.value = ""; //clear out the values
+            birthdateField.value = ""; 
+        } else {
+            alert('You Are Missing Required Attributes');
+        }
+        
     }
 }

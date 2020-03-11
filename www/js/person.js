@@ -20,7 +20,16 @@ export const person = {
         let list = new Set(person.list);
         list.add(newPerson);
 
-        person.list = Array.from(list).sort();
+        person.list = Array.from(list).sort((a,b) => {
+            let a_date = new Date(a.birthdate);
+            let b_date = new Date(b.birthdate);
+
+            if(a_date.getMonth() == b_date.getMonth()){ //they are the same month return day
+                return a_date.getDay() - b_date.getDay();
+            } else {
+                return a_date.getMonth() - b_date.getMonth(); //if not the same month sort by month
+            }
+        });
 
         //update any of the modules listening about the new person update
         console.log(`People: just updated the list`);
