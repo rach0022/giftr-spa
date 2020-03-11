@@ -1,5 +1,4 @@
 node_modules/
 .DS_Store
 .vscode
-www/css/style.css.map
 .sass-cache/

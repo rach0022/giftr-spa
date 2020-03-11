@@ -19,17 +19,7 @@ export const person = {
                 let savedPerson = JSON.parse(localStorage.getItem(`GIFTR-${x}`))
                 person.list.push(savedPerson);
 
-                //get a reference to the ul and append the people
-                let ul = document.querySelector('.person-container ul');
-                ul.innerHTML = ""; //clear out the contents of the list
-        
-                let frag = document.createDocumentFragment();
-                person.list.forEach(friend => {
-                    let li = person.createListItem(friend);
-                    //append the li to the document frag
-                    frag.appendChild(li);
-                });
-                ul.appendChild(frag);
+                person.updatePersonList();
             });
             //now to update the modules about the found tracker list
             pubsub.publish('trackerListFound', person.list);
@@ -40,6 +30,7 @@ export const person = {
         //listen for the Person Added message
         console.log('PERSON: is listening for a person added');
         pubsub.subscribe('personAdded', person.personAdded);
+        pubsub.subscribe('personDeleted', person.updatePersonList);
     },
 
     personAdded: newPerson =>{
@@ -56,6 +47,9 @@ export const person = {
         console.log(`People: just updated the list`);
         pubsub.publish('peopleUpdated', person.list);
 
+        person.updatePersonList();        
+    },
+    updatePersonList: () => {
         //now to update the ui based on the new list
         let ul = document.querySelector('.person-container ul');
         ul.innerHTML = ""; //clear out the contents of the list
@@ -67,7 +61,7 @@ export const person = {
             //append the li to the document frag
             frag.appendChild(li);
         });
-        ul.appendChild(frag);        
+        ul.appendChild(frag);
     },
 
     createListItem: friend =>{
@@ -76,13 +70,14 @@ export const person = {
         let name = document.createElement('p');
         let date = document.createElement('p');
         let btn = document.createElement('button');
-        let btn_label = document.createElement('p');
+        let btn_label = document.createElement('i');
 
         //set the properties and attributes needed
         li.setAttribute('data-personid', friend.id);
+        btn.setAttribute('data-personid', friend.id);
         name.textContent = friend.name;
         date.textContent = friend.birthdate;
-        btn_label.textContent = 'DELETE'; //replace later with delete icon
+        btn_label.classList.add('fas', 'fa-trash'); //replace later with delete icon
 
         //add the event listeners
         btn.addEventListener('click', person.deletePerson);
@@ -127,5 +122,22 @@ export const person = {
     deletePerson: ev =>{
         ev.preventDefault();
         ev.stopPropagation(); //stop the event from bubbling up and triggering the selectPerson event
+        
+        //to delete the person we just want to removeItem from local storage
+        //and then publish an update saying the person was deleted
+        let id = ev.currentTarget.getAttribute('data-personid');
+        localStorage.removeItem(`GIFTR-${id}`);
+
+        //also remove the id from the master array holding all the id values
+        let masterList = JSON.parse(localStorage.getItem('GIFTR'));
+        // let listIndex = person.list.findIndex(person => person.id == id);
+        // let removedListItem = person.list.splice(index, 1);
+        let index = masterList.findIndex(person => person.id == id);
+        let removed = masterList.splice(index, 1);
+
+        //update local storage with the master list
+        localStorage.setItem('GIFTR', JSON.stringify(masterList));
+        pubsub.publish('personDeleted'); //update the modules about the deleted person
+    
     }
 };

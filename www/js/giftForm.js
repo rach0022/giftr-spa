@@ -16,7 +16,8 @@ export const giftForm = {
 
         //get all the data from the inputs
         let form = document.querySelector('.gift-form');
-        if(form.getAttribute('data-selection')){
+        let selectedPerson = form.getAttribute('data-selection');
+        if(selectedPerson){
             let newGift = {
                 id: Date.now(),
                 name: document.querySelector('.gift-form input.name').value,
@@ -32,6 +33,7 @@ export const giftForm = {
         } else {
             alert('No Person Selected');
         }
+        pubsub.publish('personSelected', selectedPerson); //alert the module to reload
         
     },
 

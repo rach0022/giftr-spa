@@ -31,7 +31,7 @@ export const gift = {
         let price = document.createElement('p');
         let location = document.createElement('a');
         let delBtn = document.createElement('button');
-        let btn_label = document.createElement('p');
+        let btn_label = document.createElement('i');
 
         //set the properties needed
         delBtn.setAttribute('data-owner', giftItem.owner);
@@ -40,7 +40,7 @@ export const gift = {
         price.textContent = giftItem.price; 
         location.textContent = giftItem.location.store;
         location.href = giftItem.location.website;
-        btn_label.textContent = 'DELETE' //switch to icon
+        btn_label.classList.add('fas', 'fa-trash'); //switch to icon
 
         //add the appropirate listeners
         delBtn.addEventListener('click', gift.deleteGift);
