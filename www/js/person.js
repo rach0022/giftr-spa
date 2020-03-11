@@ -30,8 +30,10 @@ export const person = {
                     //append the li to the document frag
                     frag.appendChild(li);
                 });
-                ul.appendChild(frag);   
-            })
+                ul.appendChild(frag);
+            });
+            //now to update the modules about the found tracker list
+            pubsub.publish('trackerListFound', person.list);
             console.log(person.list);
             
         }

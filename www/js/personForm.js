@@ -9,6 +9,9 @@ export const personForm = {
 
         form.querySelector('button').addEventListener('click', personForm.add);
         container.appendChild(form);
+
+        //now to subscribe to any events that i need to listen for
+        pubsub.subscribe('trackerListFound', personForm.reloadSavedPersons);
     },
 
     add: ev => { 
@@ -40,5 +43,13 @@ export const personForm = {
         personForm.trackerList.push(person.id);
         localStorage.setItem(`GIFTR`, JSON.stringify(personForm.trackerList));
         localStorage.setItem(`GIFTR-${person.id}`, JSON.stringify(person));
+    },
+
+    reloadSavedPersons: savedList =>{
+        console.log(savedList);
+        savedList.forEach(save => personForm.trackerList.push(save.id)); 
+        //since i am only loading in the list on the initial load, lets
+        //unsubscribe after reloading the list
+
     }
 }

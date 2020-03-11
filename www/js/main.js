@@ -25,8 +25,8 @@ let giftr = {
         let aside = document.querySelector('aside');
 
         //now render the proper modules in the proper container
-        person.render(main);
         personForm.render(aside);
+        person.render(main);
     }
 };
 
