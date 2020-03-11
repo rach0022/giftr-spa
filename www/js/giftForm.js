@@ -26,7 +26,7 @@ export const giftForm = {
                     url: document.querySelector('.gift-form input.website').value
                 }
             }
-            giftForm.saveGiftToPerson(newGift);
+            newGift = giftForm.saveGiftToPerson(newGift); //set the id onto the gift object attribute
             form.reset();
             console.log(newGift);
         } else {
@@ -42,15 +42,21 @@ export const giftForm = {
         document.querySelector('.gift-form').setAttribute('data-selection', id);
     },
 
+    //helper function to save the gift to the right person object in local storage
+    //and then resave into local storage
     saveGiftToPerson: gift =>{
         //load the person from storage
         let id = document.querySelector('.gift-form').getAttribute('data-selection');
         let person = JSON.parse(localStorage.getItem(`GIFTR-${id}`));
+        
+        //set the id of the person to the gift to use later
+        gift.owner = person.id;
 
         //save the new gift to the person
         person.gifts.push(gift);
 
         //save back to local storage
         localStorage.setItem(`GIFTR-${id}`, JSON.stringify(person));
+        return gift;
     }
 }

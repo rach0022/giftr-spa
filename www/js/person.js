@@ -75,7 +75,7 @@ export const person = {
         let li = document.createElement('li');
         let name = document.createElement('p');
         let date = document.createElement('p');
-        let btn = document.createElement('btn');
+        let btn = document.createElement('button');
         let btn_label = document.createElement('p');
 
         //set the properties and attributes needed
@@ -83,6 +83,9 @@ export const person = {
         name.textContent = friend.name;
         date.textContent = friend.birthdate;
         btn_label.textContent = 'DELETE'; //replace later with delete icon
+
+        //add the event listeners
+        btn.addEventListener('click', person.deletePerson);
 
         //append the attributes in the needed way
         btn.appendChild(btn_label);
@@ -117,5 +120,12 @@ export const person = {
 
         let id = ev.currentTarget.getAttribute('data-personid');
         pubsub.publish('personSelected', id);
+    },
+
+    //callback function to delete the person when the user clicks the
+    //delete button
+    deletePerson: ev =>{
+        ev.preventDefault();
+        ev.stopPropagation(); //stop the event from bubbling up and triggering the selectPerson event
     }
 };
