@@ -139,7 +139,7 @@ export const person = {
         let masterList = JSON.parse(localStorage.getItem('GIFTR'));
         // let listIndex = person.list.findIndex(person => person.id == id);
         // let removedListItem = person.list.splice(index, 1);
-        let index = masterList.findIndex(person => person.id == id);
+        let index = masterList.findIndex(person => person == id);
         let removed = masterList.splice(index, 1);
 
         //update local storage with the master list

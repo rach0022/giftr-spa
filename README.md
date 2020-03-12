@@ -4,6 +4,12 @@ The assignment is to create a Single Page application for saving a list of peopl
 
 All the data will be saved in localStorage, so when the user returns they will still have the people and gift ideas from the last visit.
 
+### Bugs to Fix: 
+- [ ] Figure out why sort does not work as intended
+
+### Logical Steps To Take Next in JS Code:
+- [ ] implement the mutation observer to change page based on browser size
+
 ### Requirements:
 - [ ] All the functionality on one page
 - [ ] Button in header to Add new (person or idea)
