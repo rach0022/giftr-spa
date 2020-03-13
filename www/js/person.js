@@ -63,6 +63,8 @@ export const person = {
             frag.appendChild(li);
         });
         ul.appendChild(frag);
+        // //change all states that need to be changed
+        // document.querySelector('.gift-form').removeAttribute('data-selection'); //clearout the id
     },
 
     createListItem: friend =>{
@@ -123,6 +125,27 @@ export const person = {
 
         let id = ev.currentTarget.getAttribute('data-personid');
         pubsub.publish('personSelected', id);
+
+        //once the person is selected rebuild the list with just the one person
+        //and add a button to deselect the person
+        //first clear the list
+        let ul = document.querySelector('.person-container ul');
+        ul.innerHTML = "";
+
+        //then find the person 
+        let index = person.list.findIndex(per => per.id == id);
+        let selected = person.list[index];
+
+        //now build the li with the person and modify the button
+        let li = person.createListItem(selected);
+        let button = li.querySelector('button');
+        button.querySelector('i').classList = 'fas fa-redo';
+        button.removeEventListener('click', person.deletePerson);
+        button.addEventListener('click', person.updatePersonList);
+
+        //append the listItem to the unorderedList
+        ul.appendChild(li);
+
     },
 
     //callback function to delete the person when the user clicks the
