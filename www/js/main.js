@@ -12,8 +12,9 @@
 
 import {person} from './person.js';
 import {personForm} from './personForm.js';
-import {giftForm} from './giftForm.js'
-import {gift} from './gift.js'
+import {giftForm} from './giftForm.js';
+import {gift} from './gift.js';
+import {header} from './header.js';
 
 let giftr = {
     appTextSource : {
@@ -31,6 +32,7 @@ let giftr = {
         person.render(main);
         giftForm.render(aside);
         gift.render(aside);
+        header.render(document.querySelector('header'));
 
     }
 };
