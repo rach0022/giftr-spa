@@ -6,6 +6,8 @@ All the data will be saved in localStorage, so when the user returns they will s
 
 ### Bugs to Fix: 
 - [ ] Figure out why sort does not work as intended
+- [ ] Figure out why Delete does not remove from localStorage Every time i delete
+- [ ] Figure out why when adding person the birthdate always set the day before the one chosen 
 
 ### Logical Steps To Take Next:
 - [ ] add Header js file that will build the header module that contains the multiuse add button (will add person, or gift depending on view)
