@@ -1,9 +1,34 @@
-* {
-  color: rebeccapurple;
+html {
+  background-color: #2C2623;
+  color: #D8D0A8;
 }
 
-.gift-container p, .gift-container a {
-  color: black;
+main {
+  height: 100vh;
+  width: 45vw;
+  float: left;
+}
+
+aside {
+  height: 100vh;
+  width: 45vw;
+  float: right;
+}
+
+.gift-container {
+  background-color: #4F1740;
+}
+
+.gift-form {
+  background-color: #4F1740;
+}
+
+.person-container {
+  background-color: #6B2E51;
+}
+
+.person-form {
+  background-color: #6B2E51;
 }
 
 /*# sourceMappingURL=style.css.map */

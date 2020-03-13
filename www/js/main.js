@@ -30,7 +30,7 @@ let giftr = {
         personForm.render(aside);
         person.render(main);
         giftForm.render(aside);
-        gift.render(main);
+        gift.render(aside);
 
     }
 };

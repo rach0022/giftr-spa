@@ -2,12 +2,42 @@
 @import 'fonts';
 @import 'mixins';
 
-*{
-    color: rebeccapurple;
+html{
+    background-color: $brand-color;
+    color: $light-shade;
 }
 
+//selector for main, holds personlist or person view
+main{
+    height: 100vh;
+    width: 45vw;
+    float: left;
+}
+//selector for the aside, will either hold gift list
+//add gift form or add person form
+aside{
+    height: 100vh;
+    width: 45vw;
+    float: right;
+}
+
+
+//selector for the gift list
 .gift-container{
-    p, a{
-        color: black;
-    }
+    background-color: $dark-shade;
+}
+
+//selector for the add gift form
+.gift-form{
+    background-color: $dark-shade;
+}
+
+//selector for the person list
+.person-container{
+    background-color: $dark-accent;
+}
+
+//selector for the add person form
+.person-form{
+    background-color: $dark-accent;
 }

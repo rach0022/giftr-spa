@@ -7,7 +7,10 @@ All the data will be saved in localStorage, so when the user returns they will s
 ### Bugs to Fix: 
 - [ ] Figure out why sort does not work as intended
 
-### Logical Steps To Take Next in JS Code:
+### Logical Steps To Take Next:
+- [ ] choose colour scheme 
+- [ ] choose google fonts
+- [ ] host google fonts for offline usage 
 - [ ] implement the mutation observer to change page based on browser size
 
 ### Requirements:
