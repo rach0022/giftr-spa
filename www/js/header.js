@@ -14,6 +14,7 @@ export const header = {
         header.container = container; 
         let div = header.loadTemplate();
         //now add to the container and subscribe to other module feeds
+        div.querySelector('button').addEventListener('click', ev => {pubsub.publish('showPersonForm')});
         container.appendChild(div);
         pubsub.subscribe('personSelected', header.showGiftForm);
         pubsub.subscribe('personDeselected', header.showPersonForm);

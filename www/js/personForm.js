@@ -12,6 +12,8 @@ export const personForm = {
 
         //now to subscribe to any events that i need to listen for
         pubsub.subscribe('trackerListFound', personForm.reloadSavedPersons);
+        pubsub.subscribe('showPersonForm', personForm.showForm);
+        pubsub.subscribe('personSelected', personForm.hideForm); //hide the form if a person gets selected
     },
 
     add: ev => { 
@@ -35,6 +37,7 @@ export const personForm = {
         } else {
             alert('You Are Missing Required Attributes');
         }
+        personForm.hideForm();
     },
 
     //in the trackPerson helper function we will save the new Person to local storage
@@ -53,5 +56,12 @@ export const personForm = {
         //unsubscribe after reloading the list
         pubsub.unsubscribe('trackerListFound', personForm.reloadSavedPersons);
 
+    },
+    //helper functions to show/ hide the form
+    showForm: function(){
+        document.querySelector('.person-form').classList.remove('deactive');
+    },
+    hideForm: function(){
+        document.querySelector('.person-form').classList.add('deactive');
     }
 }

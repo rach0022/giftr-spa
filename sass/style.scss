@@ -60,7 +60,7 @@ aside{
 .gift-form{
     background-color: $dark-shade;
     height: 40vh;
-    // position: absolute;
+    position: absolute;
     @include center(column);
 }
 
@@ -70,6 +70,6 @@ aside{
 .person-form{
     background-color: $dark-accent;
     height: 40vh;
-    // position: absolute;
+    position: absolute;
     @include center(column);
 }

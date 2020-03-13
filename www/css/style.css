@@ -45,6 +45,7 @@ aside {
 .gift-form {
   background-color: #4F1740;
   height: 40vh;
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,6 +55,7 @@ aside {
 .person-form {
   background-color: #6B2E51;
   height: 40vh;
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;

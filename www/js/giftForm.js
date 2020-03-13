@@ -10,6 +10,8 @@ export const giftForm = {
         container.appendChild(form);
         //now subscribe to any events that i need to listen for
         pubsub.subscribe('personSelected', giftForm.targetPerson);
+        pubsub.subscribe('showGiftForm', giftForm.showForm);
+        pubsub.subscribe('personDeselected', giftForm.hideForm);
     },
     add: ev =>{
         ev.preventDefault();
@@ -34,7 +36,7 @@ export const giftForm = {
             alert('No Person Selected');
         }
         pubsub.publish('personSelected', selectedPerson); //alert the module to reload
-        
+        giftForm.hideForm();
     },
 
 
@@ -60,5 +62,13 @@ export const giftForm = {
         //save back to local storage
         localStorage.setItem(`GIFTR-${id}`, JSON.stringify(person));
         return gift;
+    },
+
+    //callback function to show the form
+    showForm: function(){
+        document.querySelector('.gift-form').classList.remove('deactive');
+    },
+    hideForm: function(){
+        document.querySelector('.gift-form').classList.add('deactive');
     }
 }
