@@ -38,6 +38,7 @@ aside {
 }
 
 .gift-container {
+  position: absolute;
   background-color: #4F1740;
   height: 100vh;
 }

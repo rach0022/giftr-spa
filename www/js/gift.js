@@ -9,6 +9,11 @@ export const gift = {
         //listen for any updates to gifts being added:
         console.log('GIFT: is liteneing for a gift being added');
         pubsub.subscribe('personSelected', gift.displayGiftList);
+        pubsub.subscribe('showGiftForm', gift.hideGiftList); //hide the gift list
+        pubsub.subscribe('showPersonForm', gift.hideGiftList); //hide the gift list
+        pubsub.subscribe('formComplete', gift.showGiftList); //show the gift list
+        pubsub.subscribe('personDeselected', gift.hideGiftList); //hide the gift list
+
     },
     displayGiftList: id => {
         console.log('GIFT: I hear that a person was selected');
@@ -23,6 +28,7 @@ export const gift = {
             frag.appendChild(li);
         });
         ul.appendChild(frag);
+        gift.showGiftList(); //now to actually show the list
     },
 
     createListItem: giftItem =>{
@@ -79,5 +85,13 @@ export const gift = {
         //emit an event to rebuild the list
         pubsub.publish('personSelected', person.id);
 
+    },
+
+    //helper functions to show/ hide the gift list
+    showGiftList: function(){
+        document.querySelector('.gift-container').classList.remove('deactive');
+    },
+    hideGiftList: function(){
+        document.querySelector('.gift-container').classList.add('deactive');
     }
 }

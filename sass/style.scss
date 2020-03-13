@@ -51,7 +51,7 @@ aside{
 
 //selector for the gift list
 .gift-container{
-    // position: absolute; //make position when switching and hiding moduels works
+    position: absolute; //make position when switching and hiding moduels works
     background-color: $dark-shade;
     height: 100vh;
 }

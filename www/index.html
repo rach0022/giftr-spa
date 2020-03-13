@@ -31,13 +31,15 @@
     </template>
 
     <template id="giftListTemplate">
-        <div class="gift-container">
+        <div class="gift-container deactive">
+            <p>Gift List</p>
             <ul></ul>
         </div>
     </template>
 
     <template id="personFormTemplate">
         <form action="" class="person-form deactive">
+            <p>Add Friend</p>
             <input type="text" class="name" placeholder="Name">
             <input type="date" class="birthdate" value="2020-01-01">
             <button>
@@ -48,8 +50,9 @@
 
     <template id="giftFormTemplate">
         <form action="" class="gift-form deactive">
+            <p>Add Gift Idea</p>
             <input type="text" class="name" placeholder="Gift">
-            <input type="number" class="price" placeholder="0.00" step="0.05">
+            <input type="number" class="price" placeholder="0.00" step="0.01">
             <input type="text" class="store" placeholder="Store Name">
             <input type="url" class="website" placeholder="https://www.example.com">
             <button>
