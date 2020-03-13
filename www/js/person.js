@@ -50,6 +50,7 @@ export const person = {
         person.updatePersonList();        
     },
     updatePersonList: () => {
+        console.log(person.list)
         //now to update the ui based on the new list
         let ul = document.querySelector('.person-container ul');
         ul.innerHTML = ""; //clear out the contents of the list
@@ -137,8 +138,11 @@ export const person = {
 
         //also remove the id from the master array holding all the id values
         let masterList = JSON.parse(localStorage.getItem('GIFTR'));
-        // let listIndex = person.list.findIndex(person => person.id == id);
-        // let removedListItem = person.list.splice(index, 1);
+
+        //remove from the person module
+        let listIndex = person.list.findIndex(person => person.id == id);
+        let removedListItem = person.list.splice(listIndex, 1);
+        //and then from the master list
         let index = masterList.findIndex(person => person == id);
         let removed = masterList.splice(index, 1);
 
