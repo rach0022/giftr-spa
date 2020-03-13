@@ -141,11 +141,25 @@ export const person = {
         let button = li.querySelector('button');
         button.querySelector('i').classList = 'fas fa-redo';
         button.removeEventListener('click', person.deletePerson);
-        button.addEventListener('click', person.updatePersonList);
+        button.addEventListener('click', person.deselectPerson);
 
         //append the listItem to the unorderedList
         ul.appendChild(li);
 
+    },
+
+    //callback function to deselect the person, event is rebound on same button
+    //button should have attribute that is the id of the person that was selected originally
+    deselectPerson: ev =>{
+        ev.preventDefault();
+        ev.stopPropagation();
+        let id = ev.currentTarget.getAttribute('data-personid');
+        //call the updatePersonList to rebuild the list 
+        person.updatePersonList();
+
+        //update the other modules with the deselected person
+        console.log(`PERSON: #${id} was just deselected`);
+        pubsub.publish('personDeselected', id); //not used yet
     },
 
     //callback function to delete the person when the user clicks the
