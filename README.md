@@ -10,13 +10,13 @@ All the data will be saved in localStorage, so when the user returns they will s
 - [ ] Figure out why when adding person the birthdate always set the day before the one chosen 
 
 ### Logical Steps To Take Next:
-- [ ] change button to use data-state property (of person or gift) to determine which event to publish
+- [ ] start using resize observer on the main.js to switch main and aside from 1 column layout (mobile first) to two column layout (desktop size)
+- [x] change button to use data-state property (of person or gift) to determine which event to publish
 - [x] add Header js file that will build the header module that contains the multiuse add button (will add person, or gift depending on view)
 - [x] add a "refersh" button that will deselect the person
 - [x] choose colour scheme (sorta, may need more colours) 
 - [ ] choose google fonts
 - [ ] host google fonts for offline usage 
-- [ ] implement the mutation observer to change page based on browser size
 
 ### Requirements:
 - [ ] All the functionality on one page

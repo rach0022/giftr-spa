@@ -10,9 +10,14 @@ html{
 //selector for the header, holds the header module
 header{
     height: 20vh;
+    background-color: $header-background;
+    @include center(row);
+    
     h1{
         float: left;
         width: 45vw;
+        margin: 0;
+        padding: 0;
     }
     .button-container{
         float: right;
@@ -22,6 +27,7 @@ header{
 
         button{
             // margin: 100%;
+            @include circular-w-h(40px);
         }
     }
 }
