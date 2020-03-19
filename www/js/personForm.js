@@ -24,6 +24,7 @@ export const personForm = {
         let birthdateField = document.querySelector('.person-form input.birthdate');
         let name = nameField.value;
         let birthdate = birthdateField.value;
+        console.log('BIRTHDATE GIVEN: ', birthdate);
 
         if(name && birthdate){
             let id = Date.now();

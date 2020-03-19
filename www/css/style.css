@@ -1,6 +1,7 @@
 html {
   background-color: #2C2623;
-  color: #D8D0A8; }
+  color: #D8D0A8;
+}
 
 header {
   height: 20vh;
@@ -8,31 +9,37 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center; }
-  header h1 {
-    float: left;
-    width: 45vw;
-    margin: 0;
-    padding: 0; }
-  header .button-container {
-    float: right;
-    width: 45vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; }
-    header .button-container button {
-      border-radius: 100%;
-      width: 40px;
-      height: 40px; }
+  align-items: center;
+}
+header h1 {
+  float: left;
+  width: 45vw;
+  margin: 0;
+  padding: 0;
+}
+header .button-container {
+  float: right;
+  width: 45vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+header .button-container button {
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+}
 
 .deactive {
-  visibility: hidden; }
+  visibility: hidden;
+}
 
 main {
   height: 80vh;
   width: 45vw;
-  float: left; }
+  float: left;
+}
 
 aside {
   height: 80vh;
@@ -40,12 +47,14 @@ aside {
   float: right;
   padding: 0;
   margin: 0;
-  position: relative; }
+  position: relative;
+}
 
 .gift-container {
   position: absolute;
   background-color: #4F1740;
-  height: 100vh; }
+  height: 100vh;
+}
 
 .gift-form {
   background-color: #4F1740;
@@ -54,7 +63,19 @@ aside {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+}
+
+.person-container ul li {
+  border: 2px solid #D8D0A8;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .person-form {
   background-color: #6B2E51;
@@ -63,6 +84,7 @@ aside {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+}
 
 /*# sourceMappingURL=style.css.map */

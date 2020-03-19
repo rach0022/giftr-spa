@@ -81,6 +81,7 @@ export const person = {
         name.textContent = friend.name;
 
         let convertedDate = new Date(friend.birthdate);
+        console.log(`${friend.name} birthdate is `, convertedDate.getMonth(), convertedDate.getDay(), convertedDate.getFullYear());
         let opts = {
             month: 'short',
             day: 'numeric'
@@ -180,12 +181,11 @@ export const person = {
         let listIndex = person.list.findIndex(person => person.id == id);
         let removedListItem = person.list.splice(listIndex, 1);
         //and then from the master list
-        let index = masterList.findIndex(person => person == id);
-        let removed = masterList.splice(index, 1);
+        let masterIndex = masterList.findIndex(userID => userID == id);
+        let removed = masterList.splice(masterIndex, 1);
 
         //update local storage with the master list
         localStorage.setItem('GIFTR', JSON.stringify(masterList));
-        pubsub.publish('personDeleted'); //update the modules about the deleted person
-    
+        pubsub.publish('personDeleted', removedListItem); //update the modules about the deleted person
     }
 };

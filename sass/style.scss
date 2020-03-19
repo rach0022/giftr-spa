@@ -70,6 +70,19 @@ aside{
     @include center(column);
 }
 
+//selector for the list of "friends" persons in the app
+.person-container{
+    ul{
+        li{
+            border: 2px solid $light-shade;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            list-style-type: none;
+            @include center(column);
+        }
+    }
+}
+
 
 
 //selector for the add person form
