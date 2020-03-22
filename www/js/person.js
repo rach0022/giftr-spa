@@ -221,7 +221,8 @@ export const person = {
     //will return a value to say if the date is past or not
     isBirthdayPast: time => {
         let today = new Date(Date.now());
-        let comparisonDate = new Date(time);
+        let dateArray = time.split('-');
+        let comparisonDate = new Date(dateArray[0], dateArray[1], dateArray[2]);
 
         //if the month of the birthday is greater then todays months
         //we know the birthday is coming up and not to be styled differnetly
