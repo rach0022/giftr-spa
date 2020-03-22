@@ -18,9 +18,12 @@ export const person = {
             storedItems.forEach(x => {
                 let savedPerson = JSON.parse(localStorage.getItem(`GIFTR-${x}`))
                 person.list.push(savedPerson);
-
-                person.updatePersonList();
             });
+
+            //after retrieving the list, sort the list, and then update the list 
+            let list = new Set(person.list);
+            person.list = Array.from(list).sort(person.sortPerson);
+            person.updatePersonList();
             //now to update the modules about the found tracker list
             pubsub.publish('trackerListFound', person.list);
             console.log(person.list);
@@ -127,8 +130,10 @@ export const person = {
     //first we compared birth months then compare
     //the birth day
     sortPerson: (a,b) =>{
-        let a_date = new Date(a.birthdate);
-        let b_date = new Date(b.birthdate);
+        let aDateArray = a.birthdate.split('-');
+        let bDateArray = b.birthdate.split('-');
+        let a_date = new Date(aDateArray[0], aDateArray[1] - 1, aDateArray[2]);
+        let b_date = new Date(bDateArray[0], bDateArray[1] - 1, bDateArray[2]);
 
         if(a_date.getMonth() == b_date.getMonth()){ //they are the same month return days
             return a_date.getDate() - b_date.getDate();
@@ -222,7 +227,7 @@ export const person = {
     isBirthdayPast: time => {
         let today = new Date(Date.now());
         let dateArray = time.split('-');
-        let comparisonDate = new Date(dateArray[0], dateArray[1], dateArray[2]);
+        let comparisonDate = new Date(dateArray[0], dateArray[1] - 1, dateArray[2]);
 
         //if the month of the birthday is greater then todays months
         //we know the birthday is coming up and not to be styled differnetly
@@ -231,7 +236,7 @@ export const person = {
         //as a past date
         console.log(comparisonDate.getMonth(),  today.getMonth());
         if(comparisonDate.getMonth() > today.getMonth()){
-            return undefined;  //return emptry string so nothing is added to the classlist
+            return undefined;  //return empty string so nothing is added to the classlist
         } else if (comparisonDate.getMonth() == today.getMonth()){
             if(comparisonDate.getDate() > today.getDate() || comparisonDate.getDate() == today.getDate()){
                 return undefined;

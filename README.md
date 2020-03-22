@@ -5,7 +5,8 @@ The assignment is to create a Single Page application for saving a list of peopl
 All the data will be saved in localStorage, so when the user returns they will still have the people and gift ideas from the last visit.
 
 ### Bugs to Fix: 
-- [ ] Figure out why sort does not work as intended (possibly because i was using getDay() not getDate() for the day number)
+- [x] Figure out why sort does not work as intended (possibly because i was using getDay() not getDate() for the day number) || solution: convert the date values by first splitting the string by the hypen and then convert the date value with new Date also had to resort the list when the program is first opened as well
+- [x] look into why december is treated as the first month (possibly when coverting the month value, by doing the minus 1 on dateArray[1]) || solution: forgot to subtract 1, maybe refactor code to make a function to return new dates based on the form given date value
 - [ ] Figure out why delete does not remove from localStorage masterlist (only sometimes, it usually finds the correct one) (possibly a runtime error from saving and changing the program because the list object still contains the data from the previous run)
 - [x] Figure out why when adding person the birthdate always set the day before the one chosen (look into INTL.dateTimeFormat, date is given correctly from form, see how the date is saved and look into how it is reloaded) || solution: the html form value comes as YYYY-MM-DD as a string so i split the string based on '-' and then gave the date[0] (date[1]-1) and date[2] values as the new date parameters to get a more accurate date value
 
