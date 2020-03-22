@@ -83,15 +83,18 @@ export const person = {
 
         //then get todays date to compare the birthdays too
         let past = person.isBirthdayPast(friend.birthdate);
+
         //set the properties and attributes needed
         li.setAttribute('data-personid', friend.id);
-        if(past == 'past'){
-            li.classList.add(past); //will either add an emptry string or past 
-        }
+        if(past == 'past') li.classList.add(past); //will either add an emptry string or past 
         btn.setAttribute('data-personid', friend.id);
         name.textContent = friend.name;
 
-        let convertedDate = new Date(friend.birthdate);
+        //now to split the date value based on the hypens and create a new Date
+        //after the split 0 is year, 1 is month and 2 is day
+        let dateArray = friend.birthdate.split('-');
+        console.log(dateArray[0], dateArray[1], dateArray[2]);
+        let convertedDate = new Date(dateArray[0], dateArray[1] - 1, dateArray[2]);
         // console.log(`${friend.name} birthdate is `, convertedDate.getMonth(), convertedDate.getDay(), convertedDate.getFullYear());
         
         //check the current date against the birthdays (without comparing the year)

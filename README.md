@@ -7,7 +7,7 @@ All the data will be saved in localStorage, so when the user returns they will s
 ### Bugs to Fix: 
 - [ ] Figure out why sort does not work as intended (possibly because i was using getDay() not getDate() for the day number)
 - [ ] Figure out why delete does not remove from localStorage masterlist (only sometimes, it usually finds the correct one) (possibly a runtime error from saving and changing the program because the list object still contains the data from the previous run)
-- [ ] Figure out why when adding person the birthdate always set the day before the one chosen (look into INTL.dateTimeFormat, date is given correctly from form, see how the date is saved and look into how it is reloaded)
+- [x] Figure out why when adding person the birthdate always set the day before the one chosen (look into INTL.dateTimeFormat, date is given correctly from form, see how the date is saved and look into how it is reloaded) || solution: the html form value comes as YYYY-MM-DD as a string so i split the string based on '-' and then gave the date[0] (date[1]-1) and date[2] values as the new date parameters to get a more accurate date value
 
 ### Logical Steps To Take Next:
 - [x] add a message to the person/ gift list to show it is empty

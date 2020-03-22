@@ -30,6 +30,7 @@ export const personForm = {
             let id = Date.now();
             //now update the modules about the new person
             let newPerson = {id, name, birthdate}; //using the object shorthand instead of id:id
+            console.log(newPerson);
             newPerson.gifts = []; //set an empty array for the new persons gifts
             personForm.trackPerson(newPerson);
             pubsub.publish('personAdded', newPerson);
