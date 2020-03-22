@@ -25,6 +25,8 @@ export const person = {
             pubsub.publish('trackerListFound', person.list);
             console.log(person.list);
             
+        } else {
+            person.buildEmptyList(document.querySelector('.person-container ul'));
         }
 
         //listen for the Person Added message
@@ -56,13 +58,17 @@ export const person = {
         ul.innerHTML = ""; //clear out the contents of the list
 
         let frag = document.createDocumentFragment();
-
-        person.list.forEach(friend => {
-            let li = person.createListItem(friend);
-            //append the li to the document frag
-            frag.appendChild(li);
-        });
-        ul.appendChild(frag);
+        if(person.list.length > 0){
+            person.list.forEach(friend => {
+                let li = person.createListItem(friend);
+                //append the li to the document frag
+                frag.appendChild(li);
+            });
+            ul.appendChild(frag);
+        } else {
+            person.buildEmptyList(ul);
+        }
+        
         // //change all states that need to be changed
         // document.querySelector('.gift-form').removeAttribute('data-selection'); //clearout the id
     },
@@ -75,13 +81,23 @@ export const person = {
         let btn = document.createElement('button');
         let btn_label = document.createElement('i');
 
+        //then get todays date to compare the birthdays too
+        let past = person.isBirthdayPast(friend.birthdate);
         //set the properties and attributes needed
         li.setAttribute('data-personid', friend.id);
+        if(past == 'past'){
+            li.classList.add(past); //will either add an emptry string or past 
+        }
         btn.setAttribute('data-personid', friend.id);
         name.textContent = friend.name;
 
         let convertedDate = new Date(friend.birthdate);
-        console.log(`${friend.name} birthdate is `, convertedDate.getMonth(), convertedDate.getDay(), convertedDate.getFullYear());
+        // console.log(`${friend.name} birthdate is `, convertedDate.getMonth(), convertedDate.getDay(), convertedDate.getFullYear());
+        
+        //check the current date against the birthdays (without comparing the year)
+
+        // if(today.getMonth() > convertedDate.getMonth())
+        
         let opts = {
             month: 'short',
             day: 'numeric'
@@ -112,7 +128,7 @@ export const person = {
         let b_date = new Date(b.birthdate);
 
         if(a_date.getMonth() == b_date.getMonth()){ //they are the same month return days
-            return a_date.getDay() - b_date.getDay();
+            return a_date.getDate() - b_date.getDate();
         } else {
             return a_date.getMonth() - b_date.getMonth(); //if not the same month sort by month
         }
@@ -187,5 +203,39 @@ export const person = {
         //update local storage with the master list
         localStorage.setItem('GIFTR', JSON.stringify(masterList));
         pubsub.publish('personDeleted', removedListItem); //update the modules about the deleted person
+    },
+
+    //helper function to build the empty list message
+    buildEmptyList: listContainer => {
+        listContainer.innerHTML = ""; //clear out the list container
+        let emptyText = document.createElement('p');
+        emptyText.textContent = "There are no friends added, please click the add button to begin the giftr experince";
+        listContainer.appendChild(emptyText);
+    },
+
+    //helper function to compare the current date vs the birthdate
+    //to see if it is past or not, input parameter is the date value in ms
+    //will return a value to say if the date is past or not
+    isBirthdayPast: time => {
+        let today = new Date(Date.now());
+        let comparisonDate = new Date(time);
+
+        //if the month of the birthday is greater then todays months
+        //we know the birthday is coming up and not to be styled differnetly
+        //but if the months are equal then we check the day comparison
+        //otherwise if the month is less then the current month it will be styled
+        //as a past date
+        console.log(comparisonDate.getMonth(),  today.getMonth());
+        if(comparisonDate.getMonth() > today.getMonth()){
+            return undefined;  //return emptry string so nothing is added to the classlist
+        } else if (comparisonDate.getMonth() == today.getMonth()){
+            if(comparisonDate.getDate() > today.getDate() || comparisonDate.getDate() == today.getDate()){
+                return undefined;
+            } else {
+                return 'past';
+            }
+        } else {
+            return 'past';
+        }
     }
 };

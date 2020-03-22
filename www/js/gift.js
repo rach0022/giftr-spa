@@ -22,12 +22,15 @@ export const gift = {
         let ul = document.querySelector('.gift-container ul');
         ul.innerHTML = ""; //clear out the old gift info
         let frag = document.createDocumentFragment();
-
-        person.gifts.forEach(giftItem =>{
-            let li = gift.createListItem(giftItem);
-            frag.appendChild(li);
-        });
-        ul.appendChild(frag);
+        if(person.gifts.length > 0){
+            person.gifts.forEach(giftItem =>{
+                let li = gift.createListItem(giftItem);
+                frag.appendChild(li);
+            });
+            ul.appendChild(frag);
+        } else {
+            gift.buildEmptyList(ul);
+        }
         gift.showGiftList(); //now to actually show the list
     },
 
@@ -93,5 +96,12 @@ export const gift = {
     },
     hideGiftList: function(){
         document.querySelector('.gift-container').classList.add('deactive');
+    },
+
+    //helper function to build the empty list message
+    buildEmptyList: listContainer => {
+        let emptyText = document.createElement('p');
+        emptyText.textContent = "There are no gifts added, please click the add button to begin the giftr experince";
+        listContainer.appendChild(emptyText);
     }
 }

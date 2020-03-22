@@ -5,11 +5,13 @@ The assignment is to create a Single Page application for saving a list of peopl
 All the data will be saved in localStorage, so when the user returns they will still have the people and gift ideas from the last visit.
 
 ### Bugs to Fix: 
-- [ ] Figure out why sort does not work as intended
-- [ ] Figure out why delete does not remove from localStorage masterlist (only sometimes, it usually finds the correct one)
+- [ ] Figure out why sort does not work as intended (possibly because i was using getDay() not getDate() for the day number)
+- [ ] Figure out why delete does not remove from localStorage masterlist (only sometimes, it usually finds the correct one) (possibly a runtime error from saving and changing the program because the list object still contains the data from the previous run)
 - [ ] Figure out why when adding person the birthdate always set the day before the one chosen (look into INTL.dateTimeFormat, date is given correctly from form, see how the date is saved and look into how it is reloaded)
 
 ### Logical Steps To Take Next:
+- [x] add a message to the person/ gift list to show it is empty
+- [x] style the person list differently for past birthdays versus current birthdays (check the date.now() vs the date of the birthday)
 - [ ] start using resize observer on the main.js to switch main and aside from 1 column layout (mobile first) to two column layout (desktop size)
 - [x] change button to use data-state property (of person or gift) to determine which event to publish
 - [x] add Header js file that will build the header module that contains the multiuse add button (will add person, or gift depending on view)

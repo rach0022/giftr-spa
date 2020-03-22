@@ -1,6 +1,7 @@
 html {
   background-color: #2C2623;
   color: #D8D0A8;
+  font-size: 16px;
 }
 
 header {
@@ -54,11 +55,17 @@ aside {
   position: absolute;
   background-color: #4F1740;
   height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .gift-form {
   background-color: #4F1740;
   height: 40vh;
+  width: 100%;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -66,6 +73,9 @@ aside {
   align-items: center;
 }
 
+.person-container {
+  width: 100%;
+}
 .person-container ul li {
   border: 2px solid #D8D0A8;
   margin-bottom: 10px;
@@ -76,10 +86,15 @@ aside {
   justify-content: center;
   align-items: center;
 }
+.person-container ul li.past {
+  border-style: inset;
+  border: 20px solid #D8D0A8;
+}
 
 .person-form {
   background-color: #6B2E51;
   height: 40vh;
+  width: 100%;
   position: absolute;
   display: flex;
   flex-direction: column;
