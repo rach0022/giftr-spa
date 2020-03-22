@@ -95,9 +95,7 @@ export const person = {
 
         //now to split the date value based on the hypens and create a new Date
         //after the split 0 is year, 1 is month and 2 is day
-        let dateArray = friend.birthdate.split('-');
-        console.log(dateArray[0], dateArray[1], dateArray[2]);
-        let convertedDate = new Date(dateArray[0], dateArray[1] - 1, dateArray[2]);
+        let convertedDate = person.convertFormToDateValue(friend.birthdate);
         // console.log(`${friend.name} birthdate is `, convertedDate.getMonth(), convertedDate.getDay(), convertedDate.getFullYear());
         
         //check the current date against the birthdays (without comparing the year)
@@ -130,10 +128,8 @@ export const person = {
     //first we compared birth months then compare
     //the birth day
     sortPerson: (a,b) =>{
-        let aDateArray = a.birthdate.split('-');
-        let bDateArray = b.birthdate.split('-');
-        let a_date = new Date(aDateArray[0], aDateArray[1] - 1, aDateArray[2]);
-        let b_date = new Date(bDateArray[0], bDateArray[1] - 1, bDateArray[2]);
+        let a_date = person.convertFormToDateValue(a.birthdate);
+        let b_date = person.convertFormToDateValue(b.birthdate);
 
         if(a_date.getMonth() == b_date.getMonth()){ //they are the same month return days
             return a_date.getDate() - b_date.getDate();
@@ -226,8 +222,7 @@ export const person = {
     //will return a value to say if the date is past or not
     isBirthdayPast: time => {
         let today = new Date(Date.now());
-        let dateArray = time.split('-');
-        let comparisonDate = new Date(dateArray[0], dateArray[1] - 1, dateArray[2]);
+        let comparisonDate = person.convertFormToDateValue(time);
 
         //if the month of the birthday is greater then todays months
         //we know the birthday is coming up and not to be styled differnetly
@@ -246,5 +241,10 @@ export const person = {
         } else {
             return 'past';
         }
+    },
+
+    convertFormToDateValue: formValue =>{
+        let dateArray = formValue.split('-');
+        return new Date(dateArray[0], dateArray[1] - 1, dateArray[2]);
     }
 };

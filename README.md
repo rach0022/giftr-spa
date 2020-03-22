@@ -36,8 +36,8 @@ All the data will be saved in localStorage, so when the user returns they will s
     * have either a button to see ideas or a button to delete the person [ ]
     * the delete button if showing one person
     * the gift idea button if showing all people
-- [ ] The list of people needs to be sorted month and day of birth.
-- [ ] Dates that have already passed for the current year should be styled differently than the upcoming dates.
+- [x] The list of people needs to be sorted month and day of birth.
+- [x] Dates that have already passed for the current year should be styled differently than the upcoming dates.
 - [x] Gift idea list is tied to a single person (the selected person)
 - [x] Each person will be saved with a new key in localStorage.
 - [x] The id for the person should be part of the key. Eg: giftr-15803293837366500
@@ -49,8 +49,8 @@ All the data will be saved in localStorage, so when the user returns they will s
     * a location, which has two child properties - url and store
 - [x] When a person is selected and the gift list is being shown the add button in the header should show the add gift idea form area
 - [x] When no person is selected then the add button in the header should should the add person form area.
-- [ ] The people list and gift lists should both have a message, if empty, that says to click the add button to create a person or gift.
-- [ ] The functions to build the list of people or the list of gifts should use an array in the app each time, not always go back to read from localStorage. Only read from localStorage when the app first loads.
+- [x] The people list and gift lists should both have a message, if empty, that says to click the add button to create a person or gift.
+- [x] The functions to build the list of people or the list of gifts should use an array in the app each time, not always go back to read from localStorage. Only read from localStorage when the app first loads.
 - [x] Write to localStorage when a person or gift is added or deleted.
 - [x] The forms to add new people or ideas should automatically be cleared out after the new person or gift is created.
 - [x] Use the Intl date formatter for the birthdays.
