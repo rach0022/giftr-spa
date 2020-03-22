@@ -18,8 +18,8 @@ All the data will be saved in localStorage, so when the user returns they will s
 - [x] add Header js file that will build the header module that contains the multiuse add button (will add person, or gift depending on view)
 - [x] add a "refersh" button that will deselect the person
 - [x] choose colour scheme (sorta, may need more colours) 
-- [ ] choose google fonts
-- [ ] host google fonts for offline usage 
+- [x] choose google fonts
+- [x] host google fonts for offline usage (incase neetwork cant connect for some reason)
 
 ### Requirements:
 - [ ] All the functionality on one page
@@ -64,4 +64,4 @@ All the data will be saved in localStorage, so when the user returns they will s
 
 ### To Do: 
 - [ ] select a color scheme for the app
-- [ ] select the fonts you want to use for your app (serif: __ and sans-serif: __)
+- [ ] select the fonts you want to use for your app (serif: BioRhyme and sans-serif: Quicksand)

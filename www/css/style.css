@@ -1,3 +1,51 @@
+/* biorhyme-regular - latin */
+@font-face {
+  font-family: "BioRhyme";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./google-fonts/biorhyme-v4-latin-regular.eot");
+  /* IE9 Compat Modes */
+  src: local("BioRhyme"), local("BioRhyme-Regular"), url("./google-fonts/biorhyme-v4-latin-regular.eot?#iefix") format("embedded-opentype"), url("./google-fonts/biorhyme-v4-latin-regular.woff2") format("woff2"), url("./google-fonts/biorhyme-v4-latin-regular.woff") format("woff"), url("./google-fonts/biorhyme-v4-latin-regular.ttf") format("truetype"), url("./google-fonts/biorhyme-v4-latin-regular.svg#BioRhyme") format("svg");
+  /* Legacy iOS */
+}
+/* biorhyme-700 - latin */
+@font-face {
+  font-family: "BioRhyme";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./google-fonts/biorhyme-v4-latin-700.eot");
+  /* IE9 Compat Modes */
+  src: local("BioRhyme Bold"), local("BioRhyme-Bold"), url("./google-fonts/biorhyme-v4-latin-700.eot?#iefix") format("embedded-opentype"), url("./google-fonts/biorhyme-v4-latin-700.woff2") format("woff2"), url("./google-fonts/biorhyme-v4-latin-700.woff") format("woff"), url("./google-fonts/biorhyme-v4-latin-700.ttf") format("truetype"), url("./google-fonts/biorhyme-v4-latin-700.svg#BioRhyme") format("svg");
+  /* Legacy iOS */
+}
+/* quicksand-regular - latin */
+@font-face {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./google-fonts/quicksand-v20-latin-regular.eot");
+  /* IE9 Compat Modes */
+  src: local(""), url("./google-fonts/quicksand-v20-latin-regular.eot?#iefix") format("embedded-opentype"), url("./google-fonts/quicksand-v20-latin-regular.woff2") format("woff2"), url("./google-fonts/quicksand-v20-latin-regular.woff") format("woff"), url("./google-fonts/quicksand-v20-latin-regular.ttf") format("truetype"), url("./google-fonts/quicksand-v20-latin-regular.svg#Quicksand") format("svg");
+  /* Legacy iOS */
+}
+/* quicksand-700 - latin */
+@font-face {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./google-fonts/quicksand-v20-latin-700.eot");
+  /* IE9 Compat Modes */
+  src: local(""), url("./google-fonts/quicksand-v20-latin-700.eot?#iefix") format("embedded-opentype"), url("./google-fonts/quicksand-v20-latin-700.woff2") format("woff2"), url("./google-fonts/quicksand-v20-latin-700.woff") format("woff"), url("./google-fonts/quicksand-v20-latin-700.ttf") format("truetype"), url("./google-fonts/quicksand-v20-latin-700.svg#Quicksand") format("svg");
+  /* Legacy iOS */
+}
+* {
+  font-family: "Quicksand", "sans-serif";
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Ultra", "serif";
+}
+
 html {
   background-color: #2C2623;
   color: #D8D0A8;

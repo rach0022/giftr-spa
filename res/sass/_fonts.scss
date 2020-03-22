@@ -1,0 +1,59 @@
+//google fonts downloaded with google font web helper:
+//https://google-webfonts-helper.herokuapp.com/fonts/rokkitt?subsets=latin
+
+//only have the font-weights of 400 and 700
+/* biorhyme-regular - latin */
+@font-face {
+    font-family: 'BioRhyme';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./google-fonts/biorhyme-v4-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local('BioRhyme'), local('BioRhyme-Regular'),
+         url('./google-fonts/biorhyme-v4-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('./google-fonts/biorhyme-v4-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('./google-fonts/biorhyme-v4-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('./google-fonts/biorhyme-v4-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('./google-fonts/biorhyme-v4-latin-regular.svg#BioRhyme') format('svg'); /* Legacy iOS */
+}
+/* biorhyme-700 - latin */
+@font-face {
+    font-family: 'BioRhyme';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./google-fonts/biorhyme-v4-latin-700.eot'); /* IE9 Compat Modes */
+    src: local('BioRhyme Bold'), local('BioRhyme-Bold'),
+         url('./google-fonts/biorhyme-v4-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('./google-fonts/biorhyme-v4-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+         url('./google-fonts/biorhyme-v4-latin-700.woff') format('woff'), /* Modern Browsers */
+         url('./google-fonts/biorhyme-v4-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('./google-fonts/biorhyme-v4-latin-700.svg#BioRhyme') format('svg'); /* Legacy iOS */
+}
+
+//have access to font-weights of 400 and 700
+/* quicksand-regular - latin */
+@font-face {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./google-fonts/quicksand-v20-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('./google-fonts/quicksand-v20-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('./google-fonts/quicksand-v20-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('./google-fonts/quicksand-v20-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('./google-fonts/quicksand-v20-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('./google-fonts/quicksand-v20-latin-regular.svg#Quicksand') format('svg'); /* Legacy iOS */
+}
+
+/* quicksand-700 - latin */
+@font-face {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./google-fonts/quicksand-v20-latin-700.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('./google-fonts/quicksand-v20-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('./google-fonts/quicksand-v20-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+         url('./google-fonts/quicksand-v20-latin-700.woff') format('woff'), /* Modern Browsers */
+         url('./google-fonts/quicksand-v20-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('./google-fonts/quicksand-v20-latin-700.svg#Quicksand') format('svg'); /* Legacy iOS */
+}
