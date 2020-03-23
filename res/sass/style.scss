@@ -49,18 +49,30 @@ header{
 //selector for main, holds personlist or person view
 main{
     height: 80vh;
-    width: 45vw;
-    float: left;
+    width: 95vw; //mobile first take 95%
+
+    //will only trigger if the header is above 800px
+    &.desktop-view{
+         height: auto;
+        width: 45vw;
+        float: left;
+    }
 }
 //selector for the aside, will either hold gift list
 //add gift form or add person form
 aside{
     height: 80vh;
-    width: 45vw;
-    float: right;
+    width: 95vw;
     padding: 0;
     margin: 0;
     position: relative;
+
+    //will only trigger if the header is above 800px
+    &.desktop-view{
+        height: auto;
+        width: 45vw;
+        float: right;   
+    }
 }
 
 
@@ -101,8 +113,6 @@ aside{
         }
     }
 }
-
-
 
 //selector for the add person form
 .person-form{
