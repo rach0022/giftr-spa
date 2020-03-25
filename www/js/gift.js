@@ -38,6 +38,7 @@ export const gift = {
         let li = document.createElement('li');
         let name = document.createElement('p');
         let price = document.createElement('p');
+        let store = document.createElement('p');
         let location = document.createElement('a');
         let delBtn = document.createElement('button');
         let btn_label = document.createElement('i');
@@ -46,11 +47,12 @@ export const gift = {
         delBtn.setAttribute('data-owner', giftItem.owner);
         delBtn.setAttribute('data-giftid', giftItem.id);
         name.textContent = giftItem.name;
+        store.textContent = giftItem.location.store;
 
-        let currencyFormatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'CDN' });
+        let currencyFormatter = new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CDN' });
         price.textContent = currencyFormatter.format( giftItem.price); 
-        location.textContent = giftItem.location.store;
-        location.href = giftItem.location.website;
+        location.textContent = giftItem.location.url;
+        location.href = giftItem.location.url;
         btn_label.classList.add('fas', 'fa-trash'); //switch to icon
 
         //add the appropirate listeners
@@ -61,8 +63,9 @@ export const gift = {
         delBtn.appendChild(btn_label);
         li.appendChild(name);
         li.appendChild(price);
-        li.appendChild(location);
         li.appendChild(delBtn);
+        li.appendChild(store);
+        li.appendChild(location);
 
         return li;
     },
@@ -101,7 +104,7 @@ export const gift = {
     //helper function to build the empty list message
     buildEmptyList: listContainer => {
         let emptyText = document.createElement('p');
-        emptyText.textContent = "There are no gifts added, please click the add button to begin the giftr experince";
+        emptyText.textContent = `There are no gifts for person, Click the Add button to start the GIFTR Experience`;
         listContainer.appendChild(emptyText);
     }
 }

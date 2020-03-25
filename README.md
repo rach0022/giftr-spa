@@ -11,6 +11,7 @@ All the data will be saved in localStorage, so when the user returns they will s
 - [x] Figure out why when adding person the birthdate always set the day before the one chosen (look into INTL.dateTimeFormat, date is given correctly from form, see how the date is saved and look into how it is reloaded) || solution: the html form value comes as YYYY-MM-DD as a string so i split the string based on '-' and then gave the date[0] (date[1]-1) and date[2] values as the new date parameters to get a more accurate date value
 
 ### Logical Steps To Take Next:
+- [ ] add better formatting to the list items, and make the application not scrollable and make it so that the main an d aside can appear on a phone screen together
 - [x] add a message to the person/ gift list to show it is empty
 - [x] style the person list differently for past birthdays versus current birthdays (check the date.now() vs the date of the birthday)
 - [x] start using resize observer on the main.js to switch main and aside from 1 column layout (mobile first) to two column layout (desktop size)
@@ -64,7 +65,7 @@ All the data will be saved in localStorage, so when the user returns they will s
 - [ ] Design your app with a dark theme. (Dark background and light text)
 
 ### To Do: 
-- [ ] select a color scheme for the app, need to choose a dark theme for a change
+- [x] select a color scheme for the app, need to choose a dark theme for a change
 - [x] select the fonts you want to use for your app (serif: BioRhyme and sans-serif: Quicksand)
 - [ ] finish designing the giftr-application (using SASS)
 - [ ] create some keyframe animations for giftr to use (possibly when selecting and deselecting a person, or adding/ removing a gift idea)

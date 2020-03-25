@@ -7,7 +7,11 @@ export const personForm = {
         let template = document.getElementById('personFormTemplate');
         let form = template.content.cloneNode(true);
 
-        form.querySelector('button').addEventListener('click', personForm.add);
+        form.querySelector('#submit').addEventListener('click', personForm.add);
+        form.querySelector('#cancel').addEventListener('click', () =>{
+            //do something to hide the form and show the gift container 
+            //possibly just reselect the same person
+        });
         container.appendChild(form);
 
         //now to subscribe to any events that i need to listen for
@@ -66,4 +70,5 @@ export const personForm = {
     hideForm: function(){
         document.querySelector('.person-form').classList.add('deactive');
     }
+
 }

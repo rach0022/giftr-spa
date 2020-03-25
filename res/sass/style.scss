@@ -16,11 +16,27 @@ html{
     font-size: 16px; //setting the base font size to use for EM/ REM
 }
 
+a{
+    color: $prime-dark;
+    
+}
+
+// body{
+//     @include center(column-reverse);
+//     align-items: flex-end;
+//     &.desktop-view{
+//         display: block;
+//     }
+// }
+
 //selector for the header, holds the header module
 header{
-    height: 20vh;
+    height: 15vh;
+    width: 100%;
     background-color: $sec-light;
     @include center(row);
+    // position: fixed;
+    
     
     h1{
         float: left;
@@ -42,6 +58,9 @@ header{
             background-color: transparent;
             font-size: 1.4rem;
             color: $prime-light;
+            &:hover{
+                animation: pulse 400ms ease-out 1;
+            }
         }
     }
 }
@@ -55,10 +74,12 @@ header{
 main{
     height: 80vh;
     width: 95vw; //mobile first take 95%
+    overflow-y: none;
+    // padding-top: 20vh;
 
     //will only trigger if the header is above 800px
     &.desktop-view{
-         height: auto;
+        height: 40vh;
         width: 45vw;
         float: left;
     }
@@ -71,10 +92,11 @@ aside{
     padding: 0;
     margin: 0;
     position: relative;
+    // padding-top: 20vh;
 
     //will only trigger if the header is above 800px
     &.desktop-view{
-        height: auto;
+        height: 40vh;
         width: 45vw;
         float: right;   
     }
@@ -84,15 +106,34 @@ aside{
 //selector for the gift list
 .gift-container{
     position: absolute; //make position when switching and hiding moduels works
-    background-color: $sec-light;
+    background-color: transparent;
     height: 100vh;
     width: 100%;
     @include center(column);
     justify-content: flex-start;
+    li{
+        @include center(row);
+        justify-content: space-between;
+        background-color: $sec-light;
+        margin-top: 10px;
+        p{
+            padding: 0 10px 0 10px;
+        }
+        button{
+            background-color: transparent;
+            font-size: 1.4rem;
+            color: $prime-light;
+            border: none;
+            &:hover{
+                animation: pulse 400ms ease-out 1;
+            }
+        }
+    }
 }
 
 //selector for the add gift form
 .gift-form{
+    margin-top: 10vh;
     background-color: $sec-reg;
     height: 40vh;
     width: 100%; //use up the full container
@@ -106,6 +147,7 @@ aside{
     &.desktop-view{
         .gift-form-field{
             @include center(row);
+            align-content: space-between;
         }
     }
 }
@@ -116,11 +158,13 @@ aside{
     ul{
         li{
             border: 2px solid $sec-light;
+            background-color: transparent;
             margin-bottom: 10px;
             list-style-type: none;
             @include center(row);
             justify-content: space-between;
             // padding-right: 10px;
+            
             padding: 0 10px 5px 10px;
 
             p{
@@ -132,6 +176,9 @@ aside{
                 border: none;
                 font-size: 1.2rem;
                 color: $prime-light;
+                &:hover{
+                    animation: spin 400ms ease-out 1;
+                }
             }
 
             //selector for a birthday that has already past in the year
@@ -145,7 +192,8 @@ aside{
 
 //selector for the add person form
 .person-form{
-    background-color: $sec-light;
+    margin-top: 10vh;
+    background-color: $sec-reg;
     height: 40vh;
     width: 100%;
     position: absolute;
@@ -160,4 +208,8 @@ aside{
             @include center(row);
         }
     }
+}
+
+.form-container{
+    background-color: $sec-dark;
 }
