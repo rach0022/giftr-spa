@@ -64,13 +64,13 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700; }
 
 html {
-  background-color: #2C2623;
+  background-color: #161616;
   color: #D8D0A8;
   font-size: 16px; }
 
 header {
   height: 20vh;
-  background-color: #008f00;
+  background-color: #666666;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -79,7 +79,8 @@ header {
     float: left;
     width: 45vw;
     margin: 0;
-    padding: 0; }
+    padding: 0;
+    color: #26de40; }
   header .button-container {
     float: right;
     width: 45vw;
@@ -90,7 +91,11 @@ header {
     header .button-container button {
       border-radius: 100%;
       width: 40px;
-      height: 40px; }
+      height: 40px;
+      border: none;
+      background-color: transparent;
+      font-size: 1.4rem;
+      color: #70ff72; }
 
 .deactive {
   visibility: hidden; }
@@ -116,16 +121,17 @@ aside {
 
 .gift-container {
   position: absolute;
-  background-color: #4F1740;
+  background-color: #666666;
   height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  justify-content: flex-start; }
 
 .gift-form {
-  background-color: #4F1740;
+  background-color: #3c3c3c;
   height: 40vh;
   width: 100%;
   position: absolute;
@@ -133,24 +139,41 @@ aside {
   flex-direction: column;
   justify-content: center;
   align-items: center; }
-
-.person-container {
-  width: 100%; }
-  .person-container ul li {
-    border: 2px solid #D8D0A8;
-    margin-bottom: 10px;
-    padding-bottom: 5px;
-    list-style-type: none;
+  .gift-form .gift-form-field {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; }
+  .gift-form.desktop-view .gift-form-field {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
+
+.person-container {
+  width: 100%; }
+  .person-container ul li {
+    border: 2px solid #666666;
+    margin-bottom: 10px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px 5px 10px; }
+    .person-container ul li p {
+      text-align: center; }
+    .person-container ul li button {
+      background-color: transparent;
+      border: none;
+      font-size: 1.2rem;
+      color: #70ff72; }
     .person-container ul li.past {
-      border-style: inset;
-      border: 20px solid #D8D0A8; }
+      background-color: #666666; }
 
 .person-form {
-  background-color: #6B2E51;
+  background-color: #666666;
   height: 40vh;
   width: 100%;
   position: absolute;
@@ -158,5 +181,15 @@ aside {
   flex-direction: column;
   justify-content: center;
   align-items: center; }
+  .person-form .friend-form-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+  .person-form.desktop-view .friend-form-field {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
 
 /*# sourceMappingURL=style.css.map */

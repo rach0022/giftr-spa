@@ -54,6 +54,7 @@ export const person = {
 
         person.updatePersonList();        
     },
+    
     updatePersonList: () => {
         console.log(person.list)
         //now to update the ui based on the new list

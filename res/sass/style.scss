@@ -11,7 +11,7 @@ h1,h2,h3,h4,h5,h6{
     font-weight: 700;
 }
 html{
-    background-color: $brand-color;
+    background-color: $sec-dark;
     color: $light-shade;
     font-size: 16px; //setting the base font size to use for EM/ REM
 }
@@ -19,7 +19,7 @@ html{
 //selector for the header, holds the header module
 header{
     height: 20vh;
-    background-color: $header-background;
+    background-color: $sec-light;
     @include center(row);
     
     h1{
@@ -27,6 +27,7 @@ header{
         width: 45vw;
         margin: 0;
         padding: 0;
+        color: $prime-reg;
     }
     .button-container{
         float: right;
@@ -37,6 +38,10 @@ header{
         button{
             // margin: 100%;
             @include circular-w-h(40px);
+            border: none;
+            background-color: transparent;
+            font-size: 1.4rem;
+            color: $prime-light;
         }
     }
 }
@@ -79,19 +84,30 @@ aside{
 //selector for the gift list
 .gift-container{
     position: absolute; //make position when switching and hiding moduels works
-    background-color: $dark-shade;
+    background-color: $sec-light;
     height: 100vh;
     width: 100%;
     @include center(column);
+    justify-content: flex-start;
 }
 
 //selector for the add gift form
 .gift-form{
-    background-color: $dark-shade;
+    background-color: $sec-reg;
     height: 40vh;
     width: 100%; //use up the full container
     position: absolute;
     @include center(column);
+
+    .gift-form-field{
+        @include center(column);
+    }
+
+    &.desktop-view{
+        .gift-form-field{
+            @include center(row);
+        }
+    }
 }
 
 //selector for the list of "friends" persons in the app
@@ -99,16 +115,29 @@ aside{
     width: 100%;
     ul{
         li{
-            border: 2px solid $light-shade;
+            border: 2px solid $sec-light;
             margin-bottom: 10px;
-            padding-bottom: 5px;
             list-style-type: none;
-            @include center(column);
+            @include center(row);
+            justify-content: space-between;
+            // padding-right: 10px;
+            padding: 0 10px 5px 10px;
+
+            p{
+                text-align: center;
+            }
+
+            button{
+                background-color: transparent;
+                border: none;
+                font-size: 1.2rem;
+                color: $prime-light;
+            }
 
             //selector for a birthday that has already past in the year
             &.past{
-                border-style: inset;
-                border: 20px solid $light-shade;
+                background-color: $sec-light;
+                // border: 20px solid $sec-light;
             }
         }
     }
@@ -116,9 +145,19 @@ aside{
 
 //selector for the add person form
 .person-form{
-    background-color: $dark-accent;
+    background-color: $sec-light;
     height: 40vh;
     width: 100%;
     position: absolute;
     @include center(column);
+
+    .friend-form-field{
+        @include center(column);
+    }
+
+    &.desktop-view{
+        .friend-form-field{
+            @include center(row);
+        }
+    }
 }
