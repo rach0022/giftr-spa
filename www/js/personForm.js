@@ -8,9 +8,12 @@ export const personForm = {
         let form = template.content.cloneNode(true);
 
         form.querySelector('#submit').addEventListener('click', personForm.add);
-        form.querySelector('#cancel').addEventListener('click', () =>{
-            //do something to hide the form and show the gift container 
+        form.querySelector('#cancel').addEventListener('click', ev =>{
+            //do something to hide the form and show 
             //possibly just reselect the same person
+            ev.preventDefault();
+            ev.stopPropagation();
+            pubsub.publish(('personDeselected'));
         });
         container.appendChild(form);
 
@@ -18,6 +21,7 @@ export const personForm = {
         pubsub.subscribe('trackerListFound', personForm.reloadSavedPersons);
         pubsub.subscribe('showPersonForm', personForm.showForm);
         pubsub.subscribe('personSelected', personForm.hideForm); //hide the form if a person gets selected
+        pubsub.subscribe('personDeselected', personForm.hideForm); //or deselected
     },
 
     add: ev => { 

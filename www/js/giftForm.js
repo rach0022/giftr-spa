@@ -6,12 +6,21 @@ export const giftForm = {
         let template = document.getElementById('giftFormTemplate');
         let form = template.content.cloneNode(true); //get a copy of the form
 
-        form.querySelector('button').addEventListener('click', giftForm.add);
+        form.querySelector('#submit').addEventListener('click', giftForm.add);
+        form.querySelector('#cancel').addEventListener('click', ev =>{
+            //do something to hide the form and show 
+            //possibly just reselect the same person
+            ev.preventDefault();
+            ev.stopPropagation();
+            giftForm.hideForm(); // hide the form
+            pubsub.publish('formComplete'); //show the gift list
+        });
         container.appendChild(form);
         //now subscribe to any events that i need to listen for
         pubsub.subscribe('personSelected', giftForm.targetPerson);
         pubsub.subscribe('showGiftForm', giftForm.showForm);
         pubsub.subscribe('personDeselected', giftForm.hideForm);
+        pubsub.subscribe('personSelected', giftForm.hideForm);
     },
     add: ev =>{
         ev.preventDefault();

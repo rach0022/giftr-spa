@@ -139,13 +139,10 @@ aside{
     width: 100%; //use up the full container
     position: absolute;
     @include center(column);
-
-    .gift-form-field{
-        @include center(column);
-    }
+    justify-content: flex-start;
 
     &.desktop-view{
-        .gift-form-field{
+        .form-field{
             @include center(row);
             align-content: space-between;
         }
@@ -198,18 +195,59 @@ aside{
     width: 100%;
     position: absolute;
     @include center(column);
-
-    .friend-form-field{
-        @include center(column);
-    }
+    justify-content: space-around;
 
     &.desktop-view{
-        .friend-form-field{
+        .form-field{
             @include center(row);
+            justify-content: flex-end;
+            padding-left: 50px;
+            label{
+                width: 20%;
+                padding-right: 0;
+            }
+            input{
+                width: 70%;
+                margin-right: 100px;
+            }
         }
     }
 }
 
 .form-container{
     background-color: $sec-dark;
+
+    .button-container{
+        button{
+            background-color: transparent;
+            border: none;
+            font-size: 1.2rem;
+            color: $prime-light;
+            &:hover{
+                animation: spin 400ms ease-out 1;
+                &#cancel{
+                    animation: pulse 400ms ease-out 1;
+                }
+            }
+        }
+    }
+    .form-field{
+        @include center(column);
+        text-align: right;
+        width: 100%;
+        // padding-left: 100px;
+        label{
+            width: 100%;
+            text-align: left;
+            
+        }
+        input{
+            width: 100%;
+            color: $prime-light;
+            border: none;
+            border-radius: 2px;
+            background-color: $sec-light;
+            border-bottom: 2px solid $sec-dark;
+        }
+    }
 }

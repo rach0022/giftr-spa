@@ -4,6 +4,9 @@ The assignment is to create a Single Page application for saving a list of peopl
 
 All the data will be saved in localStorage, so when the user returns they will still have the people and gift ideas from the last visit.
 
+### Ideas: 
+- [ ] Add an animated down arrow to show that there is a form at the bottom of the field
+
 ### Bugs to Fix: 
 - [x] Figure out why sort does not work as intended (possibly because i was using getDay() not getDate() for the day number) || solution: convert the date values by first splitting the string by the hypen and then convert the date value with new Date also had to resort the list when the program is first opened as well
 - [x] look into why december is treated as the first month (possibly when coverting the month value, by doing the minus 1 on dateArray[1]) || solution: forgot to subtract 1, maybe refactor code to make a function to return new dates based on the form given date value
@@ -12,6 +15,7 @@ All the data will be saved in localStorage, so when the user returns they will s
 
 ### Logical Steps To Take Next:
 - [ ] add better formatting to the list items, and make the application not scrollable and make it so that the main an d aside can appear on a phone screen together
+- [x] add the cancel button to both forms
 - [x] add a message to the person/ gift list to show it is empty
 - [x] style the person list differently for past birthdays versus current birthdays (check the date.now() vs the date of the birthday)
 - [x] start using resize observer on the main.js to switch main and aside from 1 column layout (mobile first) to two column layout (desktop size)

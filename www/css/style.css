@@ -1,75 +1,95 @@
 @keyframes pulse {
   0% {
-    transform: scale(0.8); }
+    transform: scale(0.8);
+  }
   20% {
-    transform: scale(0.6); }
+    transform: scale(0.6);
+  }
   40% {
-    transform: scale(0.7); }
+    transform: scale(0.7);
+  }
   50% {
-    transform: scale(0.8); }
+    transform: scale(0.8);
+  }
   60% {
-    transform: scale(0.9); }
+    transform: scale(0.9);
+  }
   70% {
-    transform: scale(1); }
+    transform: scale(1);
+  }
   80% {
-    transform: scale(1.1); }
+    transform: scale(1.1);
+  }
   90% {
-    transform: scale(1.2); }
+    transform: scale(1.2);
+  }
   100% {
-    transform: scale(1.3); } }
+    transform: scale(1.3);
+  }
+}
 @keyframes spin {
   100% {
-    transform: rotate(-360deg); } }
+    transform: rotate(-360deg);
+  }
+}
 /* biorhyme-regular - latin */
 @font-face {
-  font-family: 'BioRhyme';
+  font-family: "BioRhyme";
   font-style: normal;
   font-weight: 400;
   src: url("./google-fonts/biorhyme-v4-latin-regular.eot");
   /* IE9 Compat Modes */
   src: local("BioRhyme"), local("BioRhyme-Regular"), url("./google-fonts/biorhyme-v4-latin-regular.eot?#iefix") format("embedded-opentype"), url("./google-fonts/biorhyme-v4-latin-regular.woff2") format("woff2"), url("./google-fonts/biorhyme-v4-latin-regular.woff") format("woff"), url("./google-fonts/biorhyme-v4-latin-regular.ttf") format("truetype"), url("./google-fonts/biorhyme-v4-latin-regular.svg#BioRhyme") format("svg");
-  /* Legacy iOS */ }
+  /* Legacy iOS */
+}
 /* biorhyme-700 - latin */
 @font-face {
-  font-family: 'BioRhyme';
+  font-family: "BioRhyme";
   font-style: normal;
   font-weight: 700;
   src: url("./google-fonts/biorhyme-v4-latin-700.eot");
   /* IE9 Compat Modes */
   src: local("BioRhyme Bold"), local("BioRhyme-Bold"), url("./google-fonts/biorhyme-v4-latin-700.eot?#iefix") format("embedded-opentype"), url("./google-fonts/biorhyme-v4-latin-700.woff2") format("woff2"), url("./google-fonts/biorhyme-v4-latin-700.woff") format("woff"), url("./google-fonts/biorhyme-v4-latin-700.ttf") format("truetype"), url("./google-fonts/biorhyme-v4-latin-700.svg#BioRhyme") format("svg");
-  /* Legacy iOS */ }
+  /* Legacy iOS */
+}
 /* quicksand-regular - latin */
 @font-face {
-  font-family: 'Quicksand';
+  font-family: "Quicksand";
   font-style: normal;
   font-weight: 400;
   src: url("./google-fonts/quicksand-v20-latin-regular.eot");
   /* IE9 Compat Modes */
   src: local(""), url("./google-fonts/quicksand-v20-latin-regular.eot?#iefix") format("embedded-opentype"), url("./google-fonts/quicksand-v20-latin-regular.woff2") format("woff2"), url("./google-fonts/quicksand-v20-latin-regular.woff") format("woff"), url("./google-fonts/quicksand-v20-latin-regular.ttf") format("truetype"), url("./google-fonts/quicksand-v20-latin-regular.svg#Quicksand") format("svg");
-  /* Legacy iOS */ }
+  /* Legacy iOS */
+}
 /* quicksand-700 - latin */
 @font-face {
-  font-family: 'Quicksand';
+  font-family: "Quicksand";
   font-style: normal;
   font-weight: 700;
   src: url("./google-fonts/quicksand-v20-latin-700.eot");
   /* IE9 Compat Modes */
   src: local(""), url("./google-fonts/quicksand-v20-latin-700.eot?#iefix") format("embedded-opentype"), url("./google-fonts/quicksand-v20-latin-700.woff2") format("woff2"), url("./google-fonts/quicksand-v20-latin-700.woff") format("woff"), url("./google-fonts/quicksand-v20-latin-700.ttf") format("truetype"), url("./google-fonts/quicksand-v20-latin-700.svg#Quicksand") format("svg");
-  /* Legacy iOS */ }
+  /* Legacy iOS */
+}
 * {
-  font-family: 'Quicksand', 'sans-serif'; }
+  font-family: "Quicksand", "sans-serif";
+}
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Ultra', 'serif';
-  font-weight: 700; }
+  font-family: "Ultra", "serif";
+  font-weight: 700;
+}
 
 html {
   background-color: #161616;
   color: #D8D0A8;
-  font-size: 16px; }
+  font-size: 16px;
+}
 
 a {
-  color: #00ab00; }
+  color: #00ab00;
+}
 
 header {
   height: 15vh;
@@ -78,53 +98,63 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center; }
-  header h1 {
-    float: left;
-    width: 45vw;
-    margin: 0;
-    padding: 0;
-    color: #26de40; }
-  header .button-container {
-    float: right;
-    width: 45vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; }
-    header .button-container button {
-      border-radius: 100%;
-      width: 40px;
-      height: 40px;
-      border: none;
-      background-color: transparent;
-      font-size: 1.4rem;
-      color: #70ff72; }
-      header .button-container button:hover {
-        animation: pulse 400ms ease-out 1; }
+  align-items: center;
+}
+header h1 {
+  float: left;
+  width: 45vw;
+  margin: 0;
+  padding: 0;
+  color: #26de40;
+}
+header .button-container {
+  float: right;
+  width: 45vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+header .button-container button {
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: transparent;
+  font-size: 1.4rem;
+  color: #70ff72;
+}
+header .button-container button:hover {
+  animation: pulse 400ms ease-out 1;
+}
 
 .deactive {
-  visibility: hidden; }
+  visibility: hidden;
+}
 
 main {
   height: 80vh;
   width: 95vw;
-  overflow-y: none; }
-  main.desktop-view {
-    height: 40vh;
-    width: 45vw;
-    float: left; }
+  overflow-y: none;
+}
+main.desktop-view {
+  height: 40vh;
+  width: 45vw;
+  float: left;
+}
 
 aside {
   height: 80vh;
   width: 95vw;
   padding: 0;
   margin: 0;
-  position: relative; }
-  aside.desktop-view {
-    height: 40vh;
-    width: 45vw;
-    float: right; }
+  position: relative;
+}
+aside.desktop-view {
+  height: 40vh;
+  width: 45vw;
+  float: right;
+}
 
 .gift-container {
   position: absolute;
@@ -135,24 +165,29 @@ aside {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  justify-content: flex-start; }
-  .gift-container li {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #666666;
-    margin-top: 10px; }
-    .gift-container li p {
-      padding: 0 10px 0 10px; }
-    .gift-container li button {
-      background-color: transparent;
-      font-size: 1.4rem;
-      color: #70ff72;
-      border: none; }
-      .gift-container li button:hover {
-        animation: pulse 400ms ease-out 1; }
+  justify-content: flex-start;
+}
+.gift-container li {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #666666;
+  margin-top: 10px;
+}
+.gift-container li p {
+  padding: 0 10px 0 10px;
+}
+.gift-container li button {
+  background-color: transparent;
+  font-size: 1.4rem;
+  color: #70ff72;
+  border: none;
+}
+.gift-container li button:hover {
+  animation: pulse 400ms ease-out 1;
+}
 
 .gift-form {
   margin-top: 10vh;
@@ -163,43 +198,47 @@ aside {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
-  .gift-form .gift-form-field {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; }
-  .gift-form.desktop-view .gift-form-field {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    align-content: space-between; }
+  align-items: center;
+  justify-content: flex-start;
+}
+.gift-form.desktop-view .form-field {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: space-between;
+}
 
 .person-container {
-  width: 100%; }
-  .person-container ul li {
-    border: 2px solid #666666;
-    background-color: transparent;
-    margin-bottom: 10px;
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 10px 5px 10px; }
-    .person-container ul li p {
-      text-align: center; }
-    .person-container ul li button {
-      background-color: transparent;
-      border: none;
-      font-size: 1.2rem;
-      color: #70ff72; }
-      .person-container ul li button:hover {
-        animation: spin 400ms ease-out 1; }
-    .person-container ul li.past {
-      background-color: #666666; }
+  width: 100%;
+}
+.person-container ul li {
+  border: 2px solid #666666;
+  background-color: transparent;
+  margin-bottom: 10px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px 5px 10px;
+}
+.person-container ul li p {
+  text-align: center;
+}
+.person-container ul li button {
+  background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: #70ff72;
+}
+.person-container ul li button:hover {
+  animation: spin 400ms ease-out 1;
+}
+.person-container ul li.past {
+  background-color: #666666;
+}
 
 .person-form {
   margin-top: 10vh;
@@ -210,19 +249,60 @@ aside {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
-  .person-form .friend-form-field {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; }
-  .person-form.desktop-view .friend-form-field {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center; }
+  align-items: center;
+  justify-content: space-around;
+}
+.person-form.desktop-view .form-field {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-end;
+  padding-left: 50px;
+}
+.person-form.desktop-view .form-field label {
+  width: 20%;
+  padding-right: 0;
+}
+.person-form.desktop-view .form-field input {
+  width: 70%;
+  margin-right: 100px;
+}
 
 .form-container {
-  background-color: #161616; }
+  background-color: #161616;
+}
+.form-container .button-container button {
+  background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: #70ff72;
+}
+.form-container .button-container button:hover {
+  animation: spin 400ms ease-out 1;
+}
+.form-container .button-container button:hover#cancel {
+  animation: pulse 400ms ease-out 1;
+}
+.form-container .form-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: right;
+  width: 100%;
+}
+.form-container .form-field label {
+  width: 100%;
+  text-align: left;
+}
+.form-container .form-field input {
+  width: 100%;
+  color: #70ff72;
+  border: none;
+  border-radius: 2px;
+  background-color: #666666;
+  border-bottom: 2px solid #161616;
+}
 
 /*# sourceMappingURL=style.css.map */
