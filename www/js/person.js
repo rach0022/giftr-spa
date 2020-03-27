@@ -214,7 +214,7 @@ export const person = {
     buildEmptyList: listContainer => {
         listContainer.innerHTML = ""; //clear out the list container
         let emptyText = document.createElement('p');
-        emptyText.textContent = "There are no friends added, please click the add button to begin the giftr experince";
+        emptyText.textContent = "There are no friends added, please click the add button at the top to begin the giftr experince";
         listContainer.appendChild(emptyText);
     },
 

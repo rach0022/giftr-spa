@@ -14,6 +14,7 @@ html{
     background-color: $sec-dark;
     color: $light-shade;
     font-size: 16px; //setting the base font size to use for EM/ REM
+    // overflow-y: hidden;
 }
 
 a{
@@ -31,7 +32,7 @@ a{
 
 //selector for the header, holds the header module
 header{
-    height: 15vh;
+    height: 5em;
     width: 100%;
     background-color: $sec-light;
     @include center(row);
@@ -44,20 +45,26 @@ header{
         margin: 0;
         padding: 0;
         color: $prime-reg;
+        font-weight: 7700;
     }
     .button-container{
-        float: right;
         width: 45vw;
 
         @include center(column);
+        position: relative;
+        top: -1.6em;
+        // justify-content: flex-start;
 
         button{
             // margin: 100%;
             @include circular-w-h(40px);
             border: none;
             background-color: transparent;
-            font-size: 1.4rem;
+            font-size: 1.8rem;
             color: $prime-light;
+            p{
+                @include center(row);
+            }
             &:hover{
                 animation: pulse 400ms ease-out 1;
             }
@@ -72,22 +79,27 @@ header{
 
 //selector for main, holds personlist or person view
 main{
-    height: 80vh;
+    height: auto;
     width: 95vw; //mobile first take 95%
     overflow-y: none;
     // padding-top: 20vh;
+    ul{
+        li{
+            padding: none;
+        }
+    }
 
     //will only trigger if the header is above 800px
     &.desktop-view{
-        height: 40vh;
-        width: 45vw;
+        width: 48vw;
         float: left;
+        font-size: 18px;
     }
 }
 //selector for the aside, will either hold gift list
 //add gift form or add person form
 aside{
-    height: 80vh;
+    height: auto;
     width: 95vw;
     padding: 0;
     margin: 0;
@@ -96,12 +108,11 @@ aside{
 
     //will only trigger if the header is above 800px
     &.desktop-view{
-        height: 40vh;
-        width: 45vw;
+        width: 48vw;
+        font-size: 18px;
         float: right;   
     }
 }
-
 
 //selector for the gift list
 .gift-container{
@@ -116,6 +127,7 @@ aside{
         justify-content: space-between;
         background-color: $sec-light;
         margin-top: 10px;
+        // flex-wrap: wrap; //add this in later once i get the styling better
         p{
             padding: 0 10px 0 10px;
         }
@@ -133,7 +145,7 @@ aside{
 
 //selector for the add gift form
 .gift-form{
-    margin-top: 10vh;
+    // margin-top: 10vh;
     background-color: $sec-reg;
     height: 40vh;
     width: 100%; //use up the full container
@@ -189,7 +201,7 @@ aside{
 
 //selector for the add person form
 .person-form{
-    margin-top: 10vh;
+    // margin-top: 10vh;
     background-color: $sec-reg;
     height: 40vh;
     width: 100%;
@@ -216,6 +228,7 @@ aside{
 
 .form-container{
     background-color: $sec-dark;
+    padding-top: 1em;
 
     .button-container{
         button{
@@ -237,17 +250,29 @@ aside{
         width: 100%;
         // padding-left: 100px;
         label{
-            width: 100%;
+            width: 40vw;
+            padding-bottom: 0.1em;
             text-align: left;
             
         }
         input{
-            width: 100%;
+            width: 40vw;
             color: $prime-light;
             border: none;
             border-radius: 2px;
             background-color: $sec-light;
             border-bottom: 2px solid $sec-dark;
+        }
+    }
+
+    &.desktop-view{
+        .form-field{
+            label{
+                padding-left: 1em;
+            }
+            input{
+                margin-left: 1em;
+            }
         }
     }
 }

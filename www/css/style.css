@@ -92,7 +92,7 @@ a {
 }
 
 header {
-  height: 15vh;
+  height: 5em;
   width: 100%;
   background-color: #666666;
   display: flex;
@@ -106,14 +106,16 @@ header h1 {
   margin: 0;
   padding: 0;
   color: #26de40;
+  font-weight: 7700;
 }
 header .button-container {
-  float: right;
   width: 45vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+  top: -1.6em;
 }
 header .button-container button {
   border-radius: 100%;
@@ -121,8 +123,14 @@ header .button-container button {
   height: 40px;
   border: none;
   background-color: transparent;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   color: #70ff72;
+}
+header .button-container button p {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 header .button-container button:hover {
   animation: pulse 400ms ease-out 1;
@@ -133,26 +141,29 @@ header .button-container button:hover {
 }
 
 main {
-  height: 80vh;
+  height: auto;
   width: 95vw;
   overflow-y: none;
 }
+main ul li {
+  padding: none;
+}
 main.desktop-view {
-  height: 40vh;
-  width: 45vw;
+  width: 48vw;
   float: left;
+  font-size: 18px;
 }
 
 aside {
-  height: 80vh;
+  height: auto;
   width: 95vw;
   padding: 0;
   margin: 0;
   position: relative;
 }
 aside.desktop-view {
-  height: 40vh;
-  width: 45vw;
+  width: 48vw;
+  font-size: 18px;
   float: right;
 }
 
@@ -190,7 +201,6 @@ aside.desktop-view {
 }
 
 .gift-form {
-  margin-top: 10vh;
   background-color: #3c3c3c;
   height: 40vh;
   width: 100%;
@@ -241,7 +251,6 @@ aside.desktop-view {
 }
 
 .person-form {
-  margin-top: 10vh;
   background-color: #3c3c3c;
   height: 40vh;
   width: 100%;
@@ -271,6 +280,7 @@ aside.desktop-view {
 
 .form-container {
   background-color: #161616;
+  padding-top: 1em;
 }
 .form-container .button-container button {
   background-color: transparent;
@@ -293,16 +303,23 @@ aside.desktop-view {
   width: 100%;
 }
 .form-container .form-field label {
-  width: 100%;
+  width: 40vw;
+  padding-bottom: 0.1em;
   text-align: left;
 }
 .form-container .form-field input {
-  width: 100%;
+  width: 40vw;
   color: #70ff72;
   border: none;
   border-radius: 2px;
   background-color: #666666;
   border-bottom: 2px solid #161616;
+}
+.form-container.desktop-view .form-field label {
+  padding-left: 1em;
+}
+.form-container.desktop-view .form-field input {
+  margin-left: 1em;
 }
 
 /*# sourceMappingURL=style.css.map */

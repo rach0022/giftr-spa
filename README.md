@@ -14,6 +14,7 @@ All the data will be saved in localStorage, so when the user returns they will s
 - [x] Figure out why when adding person the birthdate always set the day before the one chosen (look into INTL.dateTimeFormat, date is given correctly from form, see how the date is saved and look into how it is reloaded) || solution: the html form value comes as YYYY-MM-DD as a string so i split the string based on '-' and then gave the date[0] (date[1]-1) and date[2] values as the new date parameters to get a more accurate date value
 
 ### Logical Steps To Take Next:
+- [ ] align the main and aside list/forms together to look less weird in both desktop and mobile view
 - [ ] addd form validation to add gift form
 - [ ] addd form validation to add friend form
 - [ ] add better formatting to the list items, and make the application not scrollable and make it so that the main an d aside can appear on a phone screen together
