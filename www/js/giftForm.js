@@ -38,7 +38,11 @@ export const giftForm = {
                     url: document.querySelector('.gift-form input.website').value
                 }
             }
-            newGift = giftForm.saveGiftToPerson(newGift); //set the id onto the gift object attribute
+            if(newGift.name == "" || newGift.price == "") {
+                alert("Did Not Save Name or Price");
+            }else {
+                newGift = giftForm.saveGiftToPerson(newGift); //set the id onto the gift object attribute
+            }
             form.reset();
             console.log(newGift);
         } else {
