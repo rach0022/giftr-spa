@@ -47,11 +47,14 @@ export const gift = {
         delBtn.setAttribute('data-owner', giftItem.owner);
         delBtn.setAttribute('data-giftid', giftItem.id);
         name.textContent = giftItem.name;
-        store.textContent = giftItem.location.store;
+        store.textContent = `${giftItem.location.store}: `;
 
         let currencyFormatter = new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CDN' });
         price.textContent = currencyFormatter.format( giftItem.price); 
         location.textContent = giftItem.location.url;
+        if(giftItem.location.url.substring(0,8) != 'https://' || giftItem.location.url.substring(0,7) != 'http://'){
+            giftItem.location.url = 'https://' + giftItem.location.url; //add on https if a protocal is not put on the url
+        }
         location.href = giftItem.location.url;
         btn_label.classList.add('fas', 'fa-trash'); //switch to icon
 
@@ -64,8 +67,10 @@ export const gift = {
         li.appendChild(name);
         li.appendChild(price);
         li.appendChild(delBtn);
+        // li.appendChild(store);
+        // li.appendChild(location);
+        store.appendChild(location);
         li.appendChild(store);
-        li.appendChild(location);
 
         return li;
     },

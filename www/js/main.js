@@ -71,6 +71,8 @@ let giftr = {
         document.querySelector('.person-container').classList.add('desktop-view');
         document.querySelector('.person-form').classList.add('desktop-view');
         document.querySelector('.gift-container').classList.add('desktop-view');
+        document.getElementById('personform-container').classList.add('desktop-view');
+        document.getElementById('giftform-container').classList.add('desktop-view');
         document.querySelector('.gift-form').classList.add('desktop-view');
     },
 
@@ -83,7 +85,9 @@ let giftr = {
         document.querySelector('.person-container').classList.remove('desktop-view');
         document.querySelector('.person-form').classList.remove('desktop-view');
         document.querySelector('.gift-container').classList.remove('desktop-view');
-        document.querySelector('.gift-form').classList.remove('desktop-view');
+        document.getElementById('personform-container').classList.remove('desktop-view');
+        document.getElementById('giftform-container').classList.remove('desktop-view');
+        document.querySelector('.form-container').classList.remove('desktop-view');
     }
 };
 

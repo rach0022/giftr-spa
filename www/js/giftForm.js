@@ -38,7 +38,7 @@ export const giftForm = {
                     url: document.querySelector('.gift-form input.website').value
                 }
             }
-            if(newGift.name == "" || newGift.price == "") {
+            if(newGift.name == "") { //|| newGift.price == "" add this in once i ask steve
                 alert("Did Not Save Name or Price");
             }else {
                 newGift = giftForm.saveGiftToPerson(newGift); //set the id onto the gift object attribute
