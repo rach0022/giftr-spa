@@ -15,9 +15,9 @@ All the data will be saved in localStorage, so when the user returns they will s
 
 ### Logical Steps To Take Next:
 - [ ] align the main and aside list/forms together to look less weird in both desktop and mobile view
-- [ ] add form validation to add gift form
-- [ ] add form validation to add friend form
-- [ ] add better formatting to the list items, and make the application not scrollable and make it so that the main an d aside can appear on a phone screen together
+- [x] add form validation to add gift form
+- [x] add form validation to add friend form
+- [x] add better formatting to the list items, and make the application not scrollable and make it so that the main an d aside can appear on a phone screen together
 - [x] add the cancel button to both forms
 - [x] add a message to the person/ gift list to show it is empty
 - [x] style the person list differently for past birthdays versus current birthdays (check the date.now() vs the date of the birthday)

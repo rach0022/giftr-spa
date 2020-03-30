@@ -68,6 +68,9 @@ header{
             &.clicked{
                 animation: pulse 400ms ease-out 1;
             }
+            &:active{
+                border: none;
+            }
         }
     }
 }
@@ -122,34 +125,37 @@ aside{
     width: 100%;
     @include center(column);
     justify-content: flex-start;
-    li{
-        @include center(row);
-        flex-wrap: wrap;
-        list-style-type: none;
-        justify-content: space-between;
-        background-color: $sec-light;
-        margin-top: 10px;
-        // flex-wrap: wrap; //add this in later once i get the styling better
-        p{
-            padding: 0 10px 0 10px;
-            width: 30%;
-            max-width: 30%;
-            &.store{
-                width: 100%;
-                max-width: 100%;
+    ul{
+        padding-left: 0;
+        li{
+            @include center(row);
+            flex-wrap: wrap;
+            list-style-type: none;
+            justify-content: space-between;
+            background-color: $sec-light;
+            margin-top: 10px;
+            // flex-wrap: wrap; //add this in later once i get the styling better
+            p{
+                padding: 0 10px 0 10px;
+                width: 30%;
+                max-width: 30%;
+                &.store{
+                    width: 100%;
+                    max-width: 100%;
+                }
+                &.giftname{
+                    font-weight: bold;
+                }
             }
-            &.giftname{
-                font-weight: bold;
-            }
-        }
-        button{
-            background-color: transparent;
-            font-size: 1.4rem;
-            color: $prime-light;
-            border: none;
-            padding-right: 1em;
-            &:hover{
-                animation: pulse 400ms ease-out 1;
+            button{
+                background-color: transparent;
+                font-size: 1.4rem;
+                color: $prime-light;
+                border: none;
+                padding-right: 1em;
+                &:hover{
+                    animation: pulse 400ms ease-out 1;
+                }
             }
         }
     }
@@ -159,7 +165,7 @@ aside{
 .gift-form{
     // margin-top: 10vh;
     background-color: $sec-reg;
-    height: 40vh;
+    min-height: 40vh;
     width: 100%; //use up the full container
     position: absolute;
     @include center(column);
@@ -177,6 +183,8 @@ aside{
 .person-container{
     width: 100%;
     ul{
+        // list-style: inside;
+        padding-left: 0;
         li{
             border: 2px solid $sec-light;
             background-color: transparent;
