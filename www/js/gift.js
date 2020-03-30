@@ -1,4 +1,5 @@
 import {pubsub} from './pubsub.js';
+import {animate} from './animate.js';
 
 export const gift = {
     render: container =>{
@@ -47,7 +48,9 @@ export const gift = {
         delBtn.setAttribute('data-owner', giftItem.owner);
         delBtn.setAttribute('data-giftid', giftItem.id);
         name.textContent = giftItem.name;
+        name.classList.add('giftname');
         store.textContent = `${giftItem.location.store}: `;
+        store.classList.add('store');
 
         let currencyFormatter = new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CDN' });
         price.textContent = currencyFormatter.format( giftItem.price); 

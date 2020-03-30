@@ -65,7 +65,7 @@ header{
             p{
                 @include center(row);
             }
-            &:hover{
+            &.clicked{
                 animation: pulse 400ms ease-out 1;
             }
         }
@@ -132,6 +132,15 @@ aside{
         // flex-wrap: wrap; //add this in later once i get the styling better
         p{
             padding: 0 10px 0 10px;
+            width: 30%;
+            max-width: 30%;
+            &.store{
+                width: 100%;
+                max-width: 100%;
+            }
+            &.giftname{
+                font-weight: bold;
+            }
         }
         button{
             background-color: transparent;

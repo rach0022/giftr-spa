@@ -107,7 +107,7 @@ header {
         flex-direction: row;
         justify-content: center;
         align-items: center; }
-      header .button-container button:hover {
+      header .button-container button.clicked {
         animation: pulse 400ms ease-out 1; }
 
 .deactive {
@@ -155,7 +155,14 @@ aside {
     background-color: #666666;
     margin-top: 10px; }
     .gift-container li p {
-      padding: 0 10px 0 10px; }
+      padding: 0 10px 0 10px;
+      width: 30%;
+      max-width: 30%; }
+      .gift-container li p.store {
+        width: 100%;
+        max-width: 100%; }
+      .gift-container li p.giftname {
+        font-weight: bold; }
     .gift-container li button {
       background-color: transparent;
       font-size: 1.4rem;

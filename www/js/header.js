@@ -1,4 +1,5 @@
 import {pubsub} from './pubsub.js';
+import {animate} from './animate.js';
 
 export const header = {
     container: null, //get a reference to the container that loads this module
@@ -44,9 +45,21 @@ export const header = {
     addPersonOrGift: ev =>{
         ev.preventDefault(); //stop from any accidnetal form submissions
         ev.stopPropagation(); //stop the event from bubbling up triggering other header events
+        //play the animation
+        animate.toggleTimeout('clicked', 405, ev.currentTarget);
+        
         let event =  ev.currentTarget.getAttribute('data-state') == "" ? 'showPersonForm' : 'showGiftForm';
         pubsub.publish(event);
-    }
+    },
+    //helper function to turn off or on a class, paramter will be the class name that you want to
+    //toggle and the function will then untoggle that class after a timeout (in ms) that is specified 
+    //on a specific element (3 param), use case will look like header.toggleTimeOut('deactive', 400, ev); 
+    toggleTimeout: (className, duration, element) =>{
+        setTimeout(() =>{
+            element.classList.toggle(className)
+        }, duration);
+        element.classList.toggle(className);
+    },
 
     // revealGiftForm: ev => {
     //     console.log('change the add button to show the add gift form');
