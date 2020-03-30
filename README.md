@@ -15,8 +15,8 @@ All the data will be saved in localStorage, so when the user returns they will s
 
 ### Logical Steps To Take Next:
 - [ ] align the main and aside list/forms together to look less weird in both desktop and mobile view
-- [ ] addd form validation to add gift form
-- [ ] addd form validation to add friend form
+- [ ] add form validation to add gift form
+- [ ] add form validation to add friend form
 - [ ] add better formatting to the list items, and make the application not scrollable and make it so that the main an d aside can appear on a phone screen together
 - [x] add the cancel button to both forms
 - [x] add a message to the person/ gift list to show it is empty
@@ -32,10 +32,10 @@ All the data will be saved in localStorage, so when the user returns they will s
 ### Requirements:
 - [x] All the functionality on one page
 - [x] Button in header to Add new (person or idea)
-- [ ] Use data-state property on the header to determine if you are adding person or idea
+- [x] Use data-state property on the header to determine if you are adding person or idea | if there is an attribute set inthe data state (that means we are selected on a person, if not we are looking at the full list)
 - [x] Mobile-first layout - one column when the layout is less than 800px wide.
 - [x] Use Resize observer OR media queries to change the layout || Using resize observer
-- [ ] Use a data-state property on person list to display one person or all the people
+- [x] Use a data-state property on person list to display one person or all the people
 * [x] People list items should have
     * an id (not shown but in a data- property)
     * a name,
@@ -69,7 +69,7 @@ All the data will be saved in localStorage, so when the user returns they will s
     3. Use a Finite State Machine to handle the changes and then set the data-state attribute to update the layout through CSS.
     4. (SELECTED) use the pubsub design methodology to send changes to different parts of the program through the pubsub router
 - [x] No need for the History API, pushState(), replaceState() or popstate since this is all on one page and we will always start from the people list.
-- [ ] Design your app with a dark theme. (Dark background and light text)
+- [x] Design your app with a dark theme. (Dark background and light text)
 
 ### To Do: 
 - [x] select a color scheme for the app, need to choose a dark theme for a change
