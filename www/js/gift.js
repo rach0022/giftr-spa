@@ -51,6 +51,7 @@ export const gift = {
         name.classList.add('giftname');
         store.textContent = `${giftItem.location.store}: `;
         store.classList.add('store');
+        location.target = '_blank'; //make all url open in a new page
 
         let currencyFormatter = new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CDN' });
         price.textContent = currencyFormatter.format( giftItem.price); 
